@@ -1,33 +1,146 @@
 <!DOCTYPE html>
-<head>
-    <style>
-        body{
-            margin: 0;
-        }
-        .test{
-            background-color: red;
-        }
-    </style>
-</head>
+<html lang="en">
+<meta charset="UTF-8">
+<title>UTS</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    box-sizing: border-box;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: pink;
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: stretch;
+
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: medium;
+    font-weight: 400;
+}
+
+#main-column{
+    background-color: #FFFFFF;
+    color: #000000;
+    flex-basis: 80ch;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    padding: 2ch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#aux-column-left{
+    display: block;
+    background-color: #DDDDDD;
+    color: #000000;
+    min-width: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#aux-column-right{
+    display: block;
+    background-color: #DDDDDD;
+    color: #000000;
+    min-width: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.text{
+    font-size: medium;
+    font-weight: 400;
+    padding-bottom: 1ch;
+}
+
+input{
+    font-family: 'Oswald', sans-serif;
+    font-size: medium;
+    font-weight: 400;
+
+    margin: 2ch;
+}
+
+label{
+    display: block;
+    border-radius: 1ch;
+    box-shadow: 0 0 2px 0 black;
+    margin-top: 1ch;
+}
+
+input[type=submit]{
+    display: block;
+    float: right;
+}
+
+</style>
+<script src=""></script>
 <body>
-    <div class="test">
-        Test1
+
+<!--visible when there is excess space available to the left of the main column-->
+<div id="aux-column-left">
+    
+</div>
+
+<!--only this column is guaranteed to be visible on all devices-->
+<div id="main-column">
+    <div id="anchor-top">
+    <div class="title">
+        Terminating Relationships
     </div>
-    <div id="active">
-        Test2
+
+    <div class="text">
+        Suppose a customer asks you for advice on a matter that does not concern your business. 
+        How do you appropriately tell them to leave you alone and take their business elsewhere? 
+        You want to avoid leaving the door open for any future business relationship.
     </div>
-    <div>
-        Test3
+
+    
+    <label for="a"><input type="radio" name="choice" id="a" value="Choice A" required>Choice A</label>
+    
+    <label for="b"><input type="radio" name="choice" id="b" value="Choice B" required>Choice B</label>
+    <input type="submit" value="Submit Answer">
     </div>
-    <script>
-        document.getElementById('active').addEventListener('click', function() {
-            if(this.style.backgroundColor === 'white') {
-                this.style.backgroundColor = 'black';
-                this.style.color = 'white';
-            } else {
-                this.style.backgroundColor = 'white';
-                this.style.color = 'black'
-            }
-        });
-    </script>
+    <div id="anchor-bottom" style="text-align: right;">
+        Viktor Stebner (<a href="run.html">Stop Quiz</a>)
+    </div>
+</div>
+
+<!--visible when there is excess space available to the right of the main column-->
+<div id="aux-column-right">
+    
+</div>
+
 </body>
+</html> 
