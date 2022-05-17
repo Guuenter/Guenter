@@ -45,6 +45,18 @@ header nav ul li {
     /*maybe have a little arrow/triangle pointing toward the current page*/
 }
 
+#nav-current-page-indicator {
+    width: 0;
+    height: 0;
+    border-left: 1ch transparent;
+    border-right: 1ch transparent;
+    border-bottom: 1ch black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 header nav ul li h2, header nav ul li h3 {
     margin: 0;
     padding: 0;
