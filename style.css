@@ -21,6 +21,9 @@ body {
 
 header {
     box-shadow: 0 0 2ch -0.5ch black;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 header nav ul {
