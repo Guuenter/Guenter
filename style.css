@@ -38,7 +38,7 @@ header nav ul {
 header nav ul li {
     padding: 1ch;
     text-align: center;
-    min-width: 25ch;
+    min-width: 20ch;
     flex: 0;
 }
 
