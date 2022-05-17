@@ -33,8 +33,8 @@ header nav ul {
 }
 
 header nav ul li {
-    padding: 1ch;
-    /*text-align: center;*/
+    padding: 2ch;
+    text-align: center;
 }
 
 header nav ul li h2, header nav ul li h3 {
