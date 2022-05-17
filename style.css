@@ -20,6 +20,11 @@ body {
     align-items: stretch;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 header {
     box-shadow: 0 0 2ch -0.5ch black;
 }
