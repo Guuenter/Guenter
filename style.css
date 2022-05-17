@@ -12,8 +12,15 @@
     color: black;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
 header {
-    
+    box-shadow: 0 0 2ch -0.5ch black;
 }
 /*
 @media (prefers-color-scheme: dark) {
