@@ -48,6 +48,7 @@ header nav ul li {
 #nav-current-page-indicator {
     width: 0;
     height: 0;
+    border-top: 1ch transparent;
     border-left: 1ch transparent;
     border-right: 1ch transparent;
     border-bottom: 1ch black;
