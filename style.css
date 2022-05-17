@@ -45,7 +45,7 @@ header nav ul li h2, header nav ul li h3 {
 }
 
 header nav ul li h2 {
-    margin-top: 1ch;
+    padding-top: 1ch;
 }
 
 header nav ul li h3 {
