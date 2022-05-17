@@ -44,10 +44,6 @@ header nav ul li h2, header nav ul li h3 {
     font-weight: 400;
 }
 
-header nav ul li h2 {
-    padding-top: 1ch;
-}
-
 header nav ul li h3 {
     font-weight: 200;
     font-size: 0.8rem;
