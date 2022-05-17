@@ -7,4 +7,12 @@
     font-family: 'Oswald', sans-serif;
     font-size: medium;
     font-weight: 400;
+
+    background-color: white;
+    color: black;
 }
+/*
+@media (prefers-color-scheme: dark) {
+
+}
+*/
