@@ -1,4 +1,4 @@
-:root, body{
+:root, body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,6 +10,10 @@
 
     background-color: white;
     color: black;
+}
+
+header {
+
 }
 /*
 @media (prefers-color-scheme: dark) {
