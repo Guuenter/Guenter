@@ -39,7 +39,10 @@ header nav ul li {
     padding: 1ch;
     text-align: center;
     min-width: 12ch;
-    /*flex: 0;*/
+}
+
+#nav-current-page {
+    /*maybe have a little arrow/triangle pointing toward the current page*/
 }
 
 header nav ul li h2, header nav ul li h3 {
