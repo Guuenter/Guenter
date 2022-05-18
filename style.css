@@ -15,7 +15,7 @@
 }
 
 header {
-    /*box-shadow: 0 0 2ch -0.5ch black;*/
+    box-shadow: 0 0 0.5ch 0 black;
     background-color: white;
 
     display: flex;
