@@ -68,8 +68,11 @@ main section:target::before{
 }
 */
 main {
-    
     max-width: 40ch;
+}
+
+main section {
+    scroll-margin-top: 10ch;
 }
 
 
