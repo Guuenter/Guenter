@@ -17,8 +17,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    scroll-behavior: smooth;
 }
 
 header {
@@ -62,6 +60,7 @@ main section:target::before{
 }
 */
 main {
+    scroll-behavior: smooth;
     max-width: 40ch;
 }
 
