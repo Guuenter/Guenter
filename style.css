@@ -10,6 +10,8 @@
 
     background-color: white;
     color: black;
+
+    scroll-behavior: smooth;
 }
 
 body {
@@ -65,8 +67,8 @@ main section:target::before{
     content: ">";
 }
 */
-body, main, body main {
-    scroll-behavior: smooth;
+main {
+    
     max-width: 40ch;
 }
 
