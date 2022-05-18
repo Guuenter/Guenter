@@ -41,8 +41,9 @@ header nav ul li {
     min-width: 12ch;
 }
 
-#nav-current-page {
+#nav-current-page::after {
     /*maybe have a little arrow/triangle pointing toward the current page*/
+    content: "▲";
 }
 
 
