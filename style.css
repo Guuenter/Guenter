@@ -43,9 +43,7 @@ header nav ul li {
 
 #nav-current-page::after {
     /*maybe have a little arrow/triangle pointing toward the current page*/
-    content: "▲";
-    margin-top: -1ch;
-    margin-bottom: -1ch;
+    /*content: "▲";*/
 }
 
 
