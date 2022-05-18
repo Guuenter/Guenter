@@ -28,6 +28,10 @@ header {
     top: 0;
 }
 
+header site-logo {
+    font-size: 2rem;
+}
+
 header nav {
     margin: 0;
     padding: 0;
@@ -40,7 +44,7 @@ header nav {
 header nav a {
     padding: 1ch;
     text-align: center;
-    min-width: 12ch;
+    min-width: 10ch;
     text-decoration: none;
     color: black;
 }
