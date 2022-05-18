@@ -14,17 +14,8 @@
     scroll-behavior: smooth;
 }
 
-/*
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-*/
-
 header {
-    box-shadow: 0 0 2ch -0.5ch black;
+    /*box-shadow: 0 0 2ch -0.5ch black;*/
     background-color: white;
 
     display: flex;
