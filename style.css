@@ -35,26 +35,22 @@ header nav ul {
     justify-content: center;
 }
 
-header nav ul li {
+header nav ul a {
     padding: 1ch;
     text-align: center;
     min-width: 12ch;
-}
-
-#nav-current-page::after {
-    /*maybe have a little arrow/triangle pointing toward the current page*/
-    /*content: "▲";*/
+    text-decoration: none;
 }
 
 
-header nav ul li h2, header nav ul li h3 {
+header nav ul a h2, header nav ul a h3 {
     margin: 0;
     padding: 0;
     font-size: 1rem;
     font-weight: 400;
 }
 
-header nav ul li h3 {
+header nav ul a h3 {
     font-weight: 200;
     font-size: 0.8rem;
 }
