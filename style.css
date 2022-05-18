@@ -74,6 +74,10 @@ main section {
     scroll-margin-top: 5rem;
 }
 
+footer {
+    /*tiny sticky-footer?*/
+}
+
 
 /*
 @media (prefers-color-scheme: dark) {
