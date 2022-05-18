@@ -30,6 +30,7 @@ header {
 
 header site-logo {
     font-size: 2rem;
+    font-weight: 600;
 }
 
 header nav {
