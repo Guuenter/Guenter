@@ -25,15 +25,23 @@ header {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     position: sticky;
     top: 0;
+
+    padding: 1rem;
 }
 
 header site-logo {
     font-size: 1.4rem;
     font-weight: 600;
-    padding: 1rem;
+}
+
+header site-tagline {
+    font-size: 1rem;
+    font-weight: 200;
+    font-family: 'Merriweather', 'serif';
 }
 
 header nav {
@@ -46,7 +54,7 @@ header nav {
 }
 
 header nav a {
-    padding: 1ch;
+    padding: 0 1rem;
     text-align: center;
     min-width: 10ch;
     text-decoration: none;
