@@ -37,10 +37,9 @@ header site-logo {
     font-weight: 600;
 }
 
-header site-logo a, header nav-toggle {
+header site-logo a {
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
 }
 
 header site-tagline {
@@ -52,7 +51,9 @@ header site-tagline {
     display: none;
 }
 
-
+header nav-toggle {
+    cursor: pointer;
+}
 
 @media only screen and (min-width: 80rem) {
     header site-tagline {
