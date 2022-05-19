@@ -37,6 +37,11 @@ header site-logo {
     font-weight: 600;
 }
 
+header site-logo a, header site-logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
 header site-tagline {
     font-size: 1rem;
     font-weight: 200;
@@ -45,6 +50,7 @@ header site-tagline {
     /*mobile first -> only shown on desktop*/
     display: none;
 }
+
 
 
 @media only screen and (min-width: 80rem) {
