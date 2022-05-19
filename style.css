@@ -29,8 +29,9 @@ header {
 }
 
 header site-logo {
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 600;
+    padding: 1rem;
 }
 
 header nav {
