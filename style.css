@@ -84,10 +84,12 @@ main section {
     scroll-margin-top: 5rem;
 }
 
+/*
 main section h2, main section h3 {
     font-family: 'Merriweather', 'serif';
     font-weight: 200;
 }
+*/
 
 footer {
     border-style: solid;
@@ -102,7 +104,13 @@ footer {
     position: sticky;
     bottom: 0;
 
-    padding: 0.5rem;
+    padding: 0 1rem;
+}
+
+footer site-tagline {
+    font-size: 0.8rem;
+    font-weight: 200;
+    font-family: 'Merriweather', 'serif';
 }
 
 
