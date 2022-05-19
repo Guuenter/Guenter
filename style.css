@@ -84,6 +84,10 @@ main section {
     scroll-margin-top: 5rem;
 }
 
+main section h2, main section h3 {
+    font-family: 'Merriweather', 'serif';
+}
+
 footer {
     /*tiny sticky-footer?*/
 }
