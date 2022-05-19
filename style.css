@@ -41,11 +41,14 @@ header site-tagline {
     font-size: 1rem;
     font-weight: 200;
     font-family: 'Merriweather', 'serif';
+
+    /*mobile first -> only shown on desktop*/
+    display: none;
 }
 
-@media only screen and (max-width: 80rem) {
+@media only screen and (min-width: 80rem) {
     header site-tagline {
-        display: none;
+        display: block;
     }
 }
 
@@ -77,11 +80,7 @@ header nav a h3 {
     font-weight: 200;
     font-size: 0.8rem;
 }
-/*
-main section:target::before{
-    content: ">";
-}
-*/
+
 main {
     max-width: 40ch;
 }
