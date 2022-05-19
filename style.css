@@ -37,7 +37,7 @@ header site-logo {
     font-weight: 600;
 }
 
-header site-logo a, header site-logo a {
+header site-logo a, header nav-toggle a {
     text-decoration: none;
     color: inherit;
 }
