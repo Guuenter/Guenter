@@ -46,9 +46,14 @@ header site-tagline {
     display: none;
 }
 
+
 @media only screen and (min-width: 80rem) {
     header site-tagline {
         display: block;
+    }
+
+    header nav-toggle {
+        display: none;
     }
 }
 
