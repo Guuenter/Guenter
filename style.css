@@ -86,6 +86,7 @@ main section {
 
 main section h2, main section h3 {
     font-family: 'Merriweather', 'serif';
+    font-weight: 200;
 }
 
 footer {
