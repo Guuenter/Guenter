@@ -43,6 +43,12 @@ header site-tagline {
     font-family: 'Merriweather', 'serif';
 }
 
+@media only screen and (max-width < 80rem) {
+    header site-tagline {
+        display: none;
+    }
+}
+
 header nav {
     margin: 0;
     padding: 0;
