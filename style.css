@@ -96,9 +96,9 @@ footer {
     border-width: 1px 0 0 0;
     border-color: lightgrey;
     background-color: white;*/
-    background-color: dimgray;
+    background-color: #121212;
     color: white;
-    
+
 
     display: flex;
     justify-content: space-between;
