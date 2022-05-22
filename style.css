@@ -40,6 +40,7 @@ header site-logo {
 header site-logo a {
     text-decoration: none;
     color: inherit;
+    color: dimgrey;
 }
 
 header site-tagline {
