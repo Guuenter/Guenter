@@ -40,13 +40,14 @@ header site-logo {
 header site-logo a {
     text-decoration: none;
     color: inherit;
-    color: dimgrey;
 }
 
 header site-tagline {
     font-size: 1rem;
     font-weight: 200;
     font-family: 'Merriweather', 'serif';
+    
+    color: dimgrey;
 
     /*mobile first -> only shown on desktop*/
     display: none;
