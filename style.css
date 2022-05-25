@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Staatliches&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.de {
-    display: none;
-}
-
 :root, body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0px;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: medium;
     font-weight: 400;
 
@@ -37,6 +33,7 @@ header {
 }
 
 header site-logo {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
 }
@@ -46,31 +43,6 @@ header site-logo a {
     color: inherit;
 }
 
-header site-tagline {
-    font-size: 1rem;
-    font-weight: 200;
-    font-family: 'Merriweather', 'serif';
-    
-    color: dimgrey;
-
-    /*mobile first -> only shown on desktop*/
-    display: none;
-}
-
-header nav-toggle {
-    cursor: pointer;
-}
-
-@media only screen and (min-width: 35rem) {
-    header site-tagline {
-        display: block;
-    }
-
-    header nav-toggle {
-        display: none;
-    }
-}
-
 header nav {
     margin: 0;
     padding: 0;
@@ -78,12 +50,39 @@ header nav {
 
     display: flex;
     justify-content: center;
+
+    white-space: nowrap;
+}
+
+
+@media only screen and (max-width: 55rem) {
+    header nav a h3 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 45rem) {
+    header nav .optional-1 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 40rem) {
+    header nav .optional-2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 35rem) {
+    header nav .optional-3 {
+        display: none;
+    }
 }
 
 header nav a {
     padding: 0 1rem;
     text-align: center;
-    min-width: 10ch;
+    /*min-width: 10ch;*/
     text-decoration: none;
     color: black;
 }
@@ -105,7 +104,7 @@ main {
 }
 
 main section {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 4rem;
 }
 
 /*
