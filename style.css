@@ -74,7 +74,7 @@ header nav a h3 {
     font-size: 0.8rem;
 }
 
-@media only screen and (max-width: 55rem) {
+@media only screen and (max-width: 60rem) {
     header nav a h3 {
         display: none;
     }
