@@ -36,11 +36,31 @@ header site-logo {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
+    margin-top: 0.5rem;
 }
 
 header site-logo a {
     text-decoration: none;
     color: inherit;
+}
+
+header site-logo a h1 {
+    font-family: 'Merriweather', 'serif';
+    font-weight: 200;
+    font-size: .6rem;
+    color: dimgrey;
+
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 65rem) {
+    header site-logo {
+        margin-top: 0;
+    }
+
+    header site-logo a h1 {
+        display: none;
+    }
 }
 
 header nav {
@@ -99,22 +119,31 @@ header nav a h3 {
 }
 
 main {
+    /*background-color: pink;*/
     padding: 1.5ch;
-    max-width: 55ch;
+    /*max-width: 55ch;*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main section {
     scroll-margin-top: 3.5rem;
 }
 
-main section h1 {
+main #About {
+    scroll-margin-top: 5rem;
+}
+
+/*main section h1 {
     font-family: 'Merriweather', 'serif';
     font-weight: 200;
     font-size: 1.1rem;
     color: dimgrey;
 
     margin: 1rem 0;
-}
+}*/
 
 main section h2 {
     margin-bottom: 0;
@@ -123,6 +152,22 @@ main section h2 {
 main section h3 {
     font-weight: 300;
     margin-top: 0;
+}
+
+main section p {
+    max-width: 55ch;
+}
+
+main section media-tile {
+    display: block;
+    max-width: 50%;
+    background-color: dimgray;
+    
+}
+
+main section media-tile img {
+    display: block;
+    width: 100%;
 }
 
 /*
