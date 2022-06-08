@@ -151,7 +151,7 @@ main {
 section {
     background-color: inherit;
     padding: 0 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     
     scroll-snap-align: start;
 }
