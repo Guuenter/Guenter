@@ -63,11 +63,12 @@ header {
 }
 
 header nav a{
-margin: 0.5rem;
+    margin: 0.5rem;
 }
 
 h1 {
     margin-bottom: 4rem;
+    font-family: 'Merriweather'
 }
 
 main {
@@ -100,9 +101,30 @@ main section div {
     padding: 2ch;
 }
 
+main p {
+    max-width: 80ch;
+    font-size: 1.2rem;
+
+    margin: 1ch;
+}
+
 main section p {
     max-width: 60ch;
     font-size: 1.2rem;
+}
+
+
+
+main img {
+    max-width: min(100%, 900px);
+    height: auto;
+
+    border-radius: 1ch;
+    margin: 1rem;
+}
+
+.center-text {
+    text-align: center;
 }
 
 @media only screen and (max-width: 110ch) {
