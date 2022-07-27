@@ -143,6 +143,10 @@ footer a {
     text-align: center;
 }
 
+.justify-text {
+    text-align: justify;
+}
+
 @media only screen and (max-width: 110ch) {
     main h1 {
         margin: 1rem;
