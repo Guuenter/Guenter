@@ -60,6 +60,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 0.7rem;
+    padding-bottom: 0.4rem;
 }
 
 header nav a{
@@ -68,7 +71,8 @@ header nav a{
 
 h1 {
     margin-bottom: 4rem;
-    font-family: 'Merriweather'
+    font-family: 'Poppins';
+    font-weight: 500;;
 }
 
 main {
@@ -121,6 +125,18 @@ main img {
 
     border-radius: 1ch;
     margin: 1rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+footer a {
+    margin: 0.5rem;
 }
 
 .center-text {
