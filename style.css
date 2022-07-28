@@ -34,20 +34,21 @@ a {
 
 button {
     border-radius: 2rem;
-    border-width: 1px;
+    border-width: 0px;
     border-style: solid;
     border-color: black;
     padding: 0.5ch 1ch;
-    background-color: white;
+    background-color: #f9c461;
     font-size: 1.4rem;
     font-family: 'Poppins';
 
     cursor: pointer;
+    -webkit-appearance: none;
 }
 
 button:hover {
-    background-color: black;
-    color: white;
+    background-color: #DE9E21;
+    color: black;
 }
 
 header {
@@ -171,7 +172,15 @@ footer a {
         margin-bottom: 2rem;
     }
 
-    main section img {
+    main section div {
+        text-align: center;
+    }
+
+    main section div p {
+        text-align: justify;
+    }
+
+    main img, main section img {
         max-width: 100%;
 
         border-radius: 0;
@@ -180,6 +189,10 @@ footer a {
     nav {
         display: none;
     }
+}
+
+.rounded-corners {
+    border-radius: 2ch;
 }
 
 /*
