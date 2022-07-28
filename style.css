@@ -187,6 +187,10 @@ footer a {
         border-radius: 0;
     }
 
+    .contactcard div p{
+        text-align: center;
+    }
+
     nav {
         display: none;
     }
