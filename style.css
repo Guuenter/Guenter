@@ -40,7 +40,7 @@ button {
     padding: 0.5ch 1ch;
     background-color: #f9c461;
     color: black;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-family: 'Poppins';
 
     cursor: pointer;
@@ -203,6 +203,14 @@ footer a {
 
     nav {
         display: none;
+    }
+
+    main p {
+        font-size: 1em;
+    }
+
+    main section p {
+        font-size: 1em;
     }
 }
 
