@@ -147,6 +147,17 @@ footer a {
     margin: 0.5rem;
 }
 
+/*nav-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 1rem;
+}
+
+nav-mobile a {
+    margin: 0.5rem;
+}*/
+
 .center-text {
     text-align: center;
 }
@@ -157,6 +168,10 @@ footer a {
 
 .regular-text {
     text-align: left;
+}
+
+.mobile-show-default {
+    display: none;
 }
 
 @media only screen and (max-width: 110ch) {
@@ -171,7 +186,7 @@ footer a {
     }
 }
 
-@media only screen and (max-width: 75ch) {
+@media only screen and (max-width: 85ch) {
     main h1 {
         margin-bottom: 2rem;
     }
@@ -201,16 +216,43 @@ footer a {
         text-align: center;
     }
 
-    nav {
-        display: none;
-    }
-
     main p {
         font-size: 1.05em;
     }
 
     main section p {
         font-size: 1.05em;
+    }
+
+    /**/
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        flex-basis: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .mobile-show-default {
+        display: block;
+        transition-duration: 100ms;
+    }
+    
+    .mobile-hide-default {
+        display: none;
+    }
+    
+
+    .mobile-show-nav {
+        display: flex;
+    }
+
+    .flip {
+        transform: rotate(-180deg);
     }
 }
 
