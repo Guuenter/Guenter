@@ -87,7 +87,7 @@ main {
     align-items: center;
 }
 
-main, main h2, main section {
+main, main h2, main section, main h3, main section h2, main section h3 {
     scroll-margin-top: 5rem;
 }
 
@@ -257,7 +257,7 @@ nav-mobile a {
     }
 
     .flip {
-        transform: rotate(-180deg);
+        transform: rotate3d(1,0,0,180deg);
     }
 }
 
