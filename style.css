@@ -87,6 +87,10 @@ main {
     align-items: center;
 }
 
+main, main h2, main section {
+    scroll-margin-top: 5rem;
+}
+
 main section {
     display: flex;
     align-items: center;
@@ -188,7 +192,8 @@ nav-mobile a {
 
 @media only screen and (max-width: 85ch) {
     main h1 {
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
     }
 
     main section {
