@@ -239,7 +239,7 @@ nav-mobile a {
 
     .mobile-show-default {
         display: block;
-        transition-duration: 100ms;
+        transition-duration: 200ms;
     }
     
     .mobile-hide-default {
