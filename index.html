@@ -10,33 +10,35 @@
     <title>ibconsulting | connecting students & businesses since 1998</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <svg viewbox="-0.3 -0.3 6.9 1.6" height="3rem">
+    <header class="drawer drawer-closed" id="header">
+        <div class="drawer-title">
+            <a href="index.html">
+                <svg viewbox="-0.3 -0.3 6.9 1.6" height="3rem">
+                    <path d="
+                    M 0 0
+                    C 0 0, 0 0.7, 0.65 1
+                    C 0.4 0.4, 0.8 0.5, 1 0.35
+                    C 0.5 0.5, 0.1 0.3, 0 0
+                    "
+                    fill="#DE9E21"
+                    stroke="transparent"
+                    stroke-width="0"/>
+                    <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
+                    <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+                </svg>
+            </a>
+            <svg viewBox="0 0 1 1" height="2rem" class="animated-transitions chevron" onclick="toggleDrawer('header');" style="cursor: pointer;">
                 <path d="
-                M 0 0
-                C 0 0, 0 0.7, 0.65 1
-                C 0.4 0.4, 0.8 0.5, 1 0.35
-                C 0.5 0.5, 0.1 0.3, 0 0
-                "
-                fill="#DE9E21"
-                stroke="transparent"
-                stroke-width="0"/>
-                <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
-                <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+                M 0.1 0.7
+                L 0.5 0.3
+                L 0.9 0.7"
+                fill="transparent"
+                stroke="black" 
+                stroke-width="0.07"
+                stroke-linecap="round"/>
             </svg>
-        </a>
-        <svg viewBox="0 0 1 1" height="2rem" class="mobile-show-default" id="mobile-nav-toggle" onclick="toggle_mobile_nav();" style="cursor: pointer;">
-            <path d="
-            M 0.1 0.3
-            L 0.5 0.7
-            L 0.9 0.3"
-            fill="transparent"
-            stroke="black" 
-            stroke-width="0.07"
-            stroke-linecap="round"/>
-        </svg>
-        <nav class="mobile-hide-default" id="nav">
+        </div>
+        <nav class="drawer-content">
             <a href="about.html">
                 Über uns
             </a>
@@ -55,61 +57,102 @@
         </nav>
     </header>
     <main>
-        <h1>connecting students&nbsp;& businesses since&nbsp;1998</h1>
-        <section id="About">
-            <img src="pictures/square/GB1.jpg"/>
-            <!--square slideshow?-->
-            <div>
+        <h1>
+            <svg viewBox="-1 -1 25 3" width="100%;">
+                <text x="0" y="1" font-size="1" font-weight="500" font-family="Poppins">connecting students & businesses since 1998</text>
+                <line x1="17.7" y1="1.2" x2="22.5" y2="1.2" stroke="#DE9E21" stroke-width="0.2" stroke-linecap="round"></line>
+            </svg>
+        </h1>
+        
+        <section id="about" class="drawer drawer-always-open">
+            <div class="drawer-title">
                 <h2>Über uns</h2>
-                <p class="regular-text">
-                    International Business Consulting e.V. wurde 1998 gegründet und soll die <!--bietet eine Schnittstelle zwischen...-->die Zusammenarbeit zwischen Studierenden der Hochschule Furtwangen und lokalen Unternehmen vereinfachen.
-                </p>
-                <button onclick="window.location='about.html';">Verein & Partner</button>
+                <svg onclick="toggleDrawer('about');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+            </div>
+            <div class="drawer-content responsive-duo">
+                <div class="junior">
+                    <img src="pictures/square/GB1.jpg"/>
+                    <!--square slideshow?-->
+                </div>
+                <div class="senior">
+                    <p class="regular-text">
+                        <em><em>International Business Consulting e.V.</em></em> wurde 1998 gegründet und soll die <!--bietet eine Schnittstelle zwischen...-->die Zusammenarbeit zwischen Studierenden der <em><em>Hochschule Furtwangen</em></em> und lokalen Unternehmen vereinfachen.
+                    </p>
+                    <button onclick="window.location='about.html';">Verein & Partner</button>
+                </div>
             </div>
         </section>
-        <section id="Students">
-            <img src="pictures/square/GB2.jpg"/>
-            <div>
+        <section id="students" class="drawer drawer-always-open">
+            <div class="drawer-title">
                 <h2>Studierende</h2>
-                <p class="regular-text">
-                    Unsere studentischen Consultants gewinnen wertvolle Einblicke in die Wirtschaft und können frisch gelernte Vorlesungsinhalte unmittelbar in der Praxis anwenden. </br>
-                    Sie streben vor allem Abschlüsse in wirtschaftlichen- oder wirtschaftspsychologischen Studiengängen an und <!--Weiter gehen statt verlassen-->finden nach ihrer Tätigkeit bei uns oft Praktika, Werkstudentenstellen etc. bei unseren Partnern und Kunden.
-                </p>
-                <button onclick="window.location='students.html';">Vorteile für Studierende</button>
+                <svg onclick="toggleDrawer('students');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+            </div>
+            <div class="drawer-content responsive-duo">
+                <div class="junior">
+                    <img src="pictures/square/GB2.jpg"/>
+                </div>
+                <div class="senior">
+                    <p class="regular-text">
+                        Unsere studentischen Consultants gewinnen wertvolle Einblicke in die Wirtschaft und können frisch gelernte Vorlesungsinhalte unmittelbar in der Praxis anwenden. </br>
+                        Sie streben vor allem Abschlüsse in wirtschaftlichen- oder wirtschaftspsychologischen Studiengängen an und <!--Weiter gehen statt verlassen-->finden nach ihrer Tätigkeit bei uns oft Praktika, Werkstudentenstellen etc. bei unseren Partnern und Kunden.
+                    </p>
+                    <button onclick="window.location='students.html';">Vorteile für Studierende</button>
+                </div>
             </div>
         </section>
-        <section id="Businesses">
-            <img src="pictures/square/unsplash.jpg"/>
-            <div>
+        <section id="businesses" class="drawer drawer-always-open">
+            <div class="drawer-title">
                 <h2>Unternehmen</h2>
-                <p class="regular-text">
-                    Lokale Unternehmen profitieren von der unkomplizierten Verfügbarkeit enthusiastischer Studierender und aktueller wissenschaftlicher Expertise. </br>
-                    Gerade unsere wirtschaftpsychologischen Consultants stehen ihnen <!--leave out for clarity?-->zum Beispiel<!----> immer dann zur Seite, wenn es um den Faktor Mensch geht: Sie verstehen Kunden und Mitarbeiter wie niemand sonst.
-                </p>
-                <button onclick="window.location='businesses.html';">Dienstleistungen</button>
+                <svg onclick="toggleDrawer('businesses');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+            </div>
+            <div class="drawer-content responsive-duo">
+                <div class="junior">
+                    <img src="pictures/square/unsplash.jpg"/>
+                </div>
+                <div class="senior">
+                    <p class="regular-text">
+                        Lokale Unternehmen profitieren von der unkomplizierten Verfügbarkeit enthusiastischer Studierender und aktueller wissenschaftlicher Expertise. </br>
+                        Gerade unsere wirtschaftpsychologischen Consultants stehen ihnen <!--leave out for clarity?-->zum Beispiel<!----> immer dann zur Seite, wenn es um den Faktor Mensch geht: Sie verstehen Kunden und Mitarbeiter wie niemand sonst.
+                    </p>
+                    <button onclick="window.location='businesses.html';">Dienstleistungen</button>
+                </div>
             </div>
         </section>
-        <section id="Team">
-            <img src="pictures/square/WE1.jpg"/>
-            <div>
+        <section id="team" class="drawer drawer-always-open">
+            <div class="drawer-title">
                 <h2>Team</h2>
-                <p class="regular-text">
-                    Aktuelle und ehemalige Mitglieder im Profil: </br>
-                    Alle Informationen zu Rollen, Verantwortungsgebieten und Errungenschaften auf einen Blick.
-                </p>
-                <button onclick="window.location='team.html';">Mitglieder & Alumni</button>
+                <svg onclick="toggleDrawer('team');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+            </div>
+            <div class="drawer-content responsive-duo">
+                <div class="junior">
+                    <img src="pictures/square/WE1.jpg"/>
+                </div>
+                <div class="senior">
+                    <p class="regular-text">
+                        Aktuelle und ehemalige Mitglieder im Profil: </br>
+                        Alle Informationen zu Rollen, Verantwortungsgebieten und Errungenschaften auf einen Blick.
+                    </p>
+                    <button onclick="window.location='team.html';">Mitglieder & Alumni</button>
+                </div>
             </div>
         </section>
-        <section id="Contact">
-            <img src="pictures/square/GB3.jpg"/>
-            <div>
+        <section id="contact" class="drawer drawer-always-open">
+            <div class="drawer-title">
                 <h2>Kontakt</h2>
-                <p class="regular-text">
-                    Sie möchten uns persönlich kennenlernen? </br>
-                    Dann melden Sie sich einfach per Mail an <span style="font-weight: bold; white-space: nowrap;"><a href="mailto:info@ib-consulting.com">info@ib-consulting.com</a></span> oder direkt bei den Mitgliedern unseres Leitungsteams. </br></br>
-                    Selbstverständlich können Sie uns nach Absprache auch telefonisch erreichen.
-                </p>
-                <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+                <svg onclick="toggleDrawer('contact');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+            </div>
+            <div class="drawer-content responsive-duo">
+                <div class="junior">
+                    <img src="pictures/square/GB3.jpg"/>
+                </div>
+                <div class="senior">
+                    <p class="regular-text">
+                        Sie möchten uns persönlich kennenlernen? </br>
+                        Dann melden Sie sich einfach per Mail an <span style="font-weight: bold; white-space: nowrap;"><a href="mailto:info@ib-consulting.com">info@ib-consulting.com</a></span> oder direkt bei den Mitgliedern unseres Leitungsteams. </br></br>
+                        Selbstverständlich können Sie uns nach Absprache auch telefonisch erreichen.
+                    </p>
+                    <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+                </div>
             </div>
         </section>
     </main>

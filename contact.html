@@ -10,32 +10,35 @@
     <title>ibconsulting | Contact</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <svg viewbox="-0.3 -0.3 6.6 1.6" height="3rem">
-                <path d="M 0 0
-                C 0 0, 0 0.7, 0.65 1
-                C 0.4 0.4, 0.8 0.5, 1 0.35
-                C 0.5 0.5, 0.1 0.3, 0 0
-                "
-                fill="#DE9E21"
-                stroke="transparent"
-                stroke-width="0"/>
-                <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
-                <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+    <header class="drawer drawer-closed" id="header">
+        <div class="drawer-title">
+            <a href="index.html">
+                <svg viewbox="-0.3 -0.3 6.9 1.6" height="3rem">
+                    <path d="
+                    M 0 0
+                    C 0 0, 0 0.7, 0.65 1
+                    C 0.4 0.4, 0.8 0.5, 1 0.35
+                    C 0.5 0.5, 0.1 0.3, 0 0
+                    "
+                    fill="#DE9E21"
+                    stroke="transparent"
+                    stroke-width="0"/>
+                    <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
+                    <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+                </svg>
+            </a>
+            <svg viewBox="0 0 1 1" height="2rem" class="animated-transitions chevron" onclick="toggleDrawer('header');" style="cursor: pointer;">
+                <path d="
+                M 0.1 0.7
+                L 0.5 0.3
+                L 0.9 0.7"
+                fill="transparent"
+                stroke="black" 
+                stroke-width="0.07"
+                stroke-linecap="round"/>
             </svg>
-        </a>
-        <svg viewBox="0 0 1 1" height="2rem" class="mobile-show-default" id="mobile-nav-toggle" onclick="toggle_mobile_nav();" style="cursor: pointer;">
-            <path d="
-            M 0.1 0.3
-            L 0.5 0.7
-            L 0.9 0.3"
-            fill="transparent"
-            stroke="black" 
-            stroke-width="0.07"
-            stroke-linecap="round"/>
-        </svg>
-        <nav class="mobile-hide-default" id="nav">
+        </div>
+        <nav class="drawer-content">
             <a href="about.html">
                 Über uns
             </a>
@@ -54,45 +57,83 @@
         </nav>
     </header>
     <main>
-        <h1>connecting students&nbsp;& businesses since&nbsp;1998</h1>
+        <h1>
+            <svg viewBox="-1 -1 25 3" width="100%;">
+                <text x="0" y="1" font-size="1" font-weight="500" font-family="Poppins">connecting students & businesses since 1998</text>
+                <line x1="17.7" y1="1.2" x2="22.5" y2="1.2" stroke="#DE9E21" stroke-width="0.2" stroke-linecap="round"></line>
+            </svg>
+        </h1>
         <img src="pictures/banner/GB3_3-1.jpg"/>
-        <h2>Kontakt</h2>
-        <p class="regular-text">
-            Sie möchten uns persönlich kennenlernen? </br>
-            Dann melden Sie sich einfach per Mail an <span style="font-weight: bold; white-space: nowrap;"><a href="mailto:info@ib-consulting.com">info@ib-consulting.com</a></span> <br>oder direkt bei den Mitgliedern unseres Leitungsteams: </br></br>
-        </p>
-        <h2 id="ansprechpartner">Studentische Vereinsleitung</h2>
-        <section id="Hannah-Sophie-Petrik" class="contactcard">
-            <img src="pictures/people/Hannah-Sophie-Petrik.jpg" class="rounded-corners" width="200"/>
-            <div>
-                <h3>Hannah Sophie Petrik<br><em>Head of Student Management Consultancy</em></h3>
+        <section id="contact" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Kontakt</h2>
+                <svg onclick="toggleDrawer('contact');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content">
                 <p>
-                    hannah.sophie.petrik@hs-furtwangen.de
-                    <br>+49&nbsp157&nbsp35585732
+                    Sie möchten uns persönlich kennenlernen? </br>
+                    Dann melden Sie sich einfach per Mail an <span style="font-weight: bold; white-space: nowrap;"><a href="mailto:info@ib-consulting.com">info@ib-consulting.com</a></span> <br>oder direkt bei den Mitgliedern unseres Leitungsteams: 
                 </p>
-                <button onclick="window.location='https://www.linkedin.com/in/hannah-sophie-petrik-97476a1b2/';">Zum LinkedIn-Profil</button>
             </div>
         </section>
-        <section id="Julia-Seckinger" class="contactcard">
-            <img src="pictures/people/Julia-Seckinger.jpg" class="rounded-corners" width="200"/>
-            <div>
-                <h3>Julia Seckinger<br><em>Head of Student Management Consultancy</em></h3>
-                <p>
-                    julia.seckinger@hs-furtwangen.de
-                    <br>+49&nbsp173&nbsp6874626
-                </p>
-                <button onclick="window.location='https://de.linkedin.com/in/julia-seckinger';">Zum LinkedIn-Profil</button>
+        
+        <section id="ansprechpartner" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Ansprechpartner</h2>
+                <svg onclick="toggleDrawer('ansprechpartner');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
             </div>
-        </section>
-        <section id="Viktor-Stebner" class="contactcard">
-            <img src="pictures/people/Viktor-Stebner.jpg" class="rounded-corners" width="200"/>
-            <div>
-                <h3>Viktor Stebner<br><em>Head of Student Management Consultancy</em></h3>
-                <p>
-                    viktor.stebner@hs-furtwangen.de
-                    <br>+49&nbsp151&nbsp41259080
-                </p>
-                <button onclick="window.location='https://de.linkedin.com/in/viktorstebner';">Zum LinkedIn-Profil</button>
+            <div class="drawer-content card-display">
+                <div id="Hannah-Sophie-Petrik" class="card-vertical">
+                    <img src="pictures/people/Hannah-Sophie-Petrik.jpg" width="200"/>
+                    <div class="card-name">
+                        Hannah Sophie Petrik
+                    </div>
+                    <div class="card-title">
+                        Studentische&nbsp;Vereinsleitung
+                    </div>
+                    <div class="card-body">
+                        hannah.sophie.petrik@hs&#8209;furtwangen.de
+                        <br>+49&nbsp157&nbsp35585732
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://www.linkedin.com/in/hannah-sophie-petrik-97476a1b2/';">LinkedIn-Profil</button>
+                    </div>
+                </div>
+                <div id="Julia-Seckinger" class="card-vertical">
+                    <img src="pictures/people/Julia-Seckinger.jpg" width="200"/>
+                    <div class="card-name">
+                        Julia Seckinger
+                    </div>
+                    <div class="card-title">
+                        Studentische&nbsp;Vereinsleitung
+                    </div>
+                    <div class="card-body">
+                        julia.seckinger@hs&#8209;furtwangen.de
+                        <br>+49&nbsp173&nbsp6874626
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://de.linkedin.com/in/julia-seckinger';">LinkedIn-Profil</button>
+                    </div>
+                </div>
+                <div id="Viktor-Stebner" class="card-vertical">
+                    <img src="pictures/people/Viktor-Stebner.jpg" width="200"/>
+                    <div class="card-name">
+                        Viktor Stebner
+                    </div>
+                    <div class="card-title">
+                        Studentische&nbsp;Vereinsleitung
+                    </div>
+                    <div class="card-body">
+                        viktor.stebner@hs&#8209;furtwangen.de
+                        <br>+49&nbsp151&nbsp41259080
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://de.linkedin.com/in/viktorstebner';">LinkedIn-Profil</button>
+                    </div>
+                </div>
+                
             </div>
         </section>
     </main>

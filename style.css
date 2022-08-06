@@ -19,17 +19,18 @@
     */
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 ::selection {
     background-color: black;
     color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 button {
@@ -52,29 +53,22 @@ button:hover {
     color: black;
 }
 
+img {
+    max-width: 100%;
+    border-radius: 1ch;
+}
+
 header {
     position: sticky;
     top: 0;
 
+    z-index: 1;
+
+    width: 100%;
+    height: 3rem;
+
     background-color: inherit;
     opacity: 95%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0.7rem;
-    padding-bottom: 0.4rem;
-}
-
-header nav a{
-    margin: 0.5rem;
-}
-
-h1 {
-    margin-bottom: 4rem;
-    font-family: 'Poppins';
-    font-weight: 500;;
 }
 
 main {
@@ -84,59 +78,17 @@ main {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    max-width: 120ch;
 }
 
-main, main h2, main section, main h3, main section h2, main section h3 {
-    scroll-margin-top: 5rem;
+main h1 {
+    margin: 0;
+    padding: 0;
 }
 
 main section {
-    display: flex;
-    align-items: center;
-    background-color: inherit;
-    scroll-snap-align: start;
-
     margin: 1rem;
-}
-
-main section img {
-    max-width: 450px;
-    height: auto;
-
-    border-radius: 3ch;
-}
-
-main section div {
-    padding: 2ch;
-}
-
-main p {
-    max-width: 80ch;
-    font-size: 1.2rem;
-
-    margin: 1ch;
-}
-
-main section p {
-    max-width: 60ch;
-    font-size: 1.2rem;
-}
-
-main button {
-    margin: 1rem;
-}
-
-main img {
-    max-width: min(100%, 900px);
-    height: auto;
-
-    border-radius: 1ch;
-    margin: 1rem;
-}
-
-main h1{
-    margin-top: 1rem;
 }
 
 footer {
@@ -148,121 +100,171 @@ footer {
 }
 
 footer a {
-    margin: 0.5rem;
+    margin: 0.5ch;
 }
 
-/*nav-mobile {
+p {
+    max-width: 80ch;
+    margin: 1rem;
+    align-self: flex-start;
+}
+
+.animated-transitions {
+    transition-duration: 200ms;
+}
+
+/*everything related to drawers*/
+
+.drawer{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: stretch;
+    background-color: inherit;
+
     margin: 1rem;
 }
 
-nav-mobile a {
-    margin: 0.5rem;
-}*/
+.drawer-title {
+    background-color: inherit;
 
-.center-text {
-    text-align: center;
+    flex: 1;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.justify-text {
-    text-align: justify;
+.drawer-content {
+    background-color: inherit;
 }
 
-.regular-text {
-    text-align: left;
-}
-
-.mobile-show-default {
+.drawer-closed:not(.drawer-always-open) .drawer-content {
     display: none;
 }
 
-@media only screen and (max-width: 110ch) {
-    main h1 {
-        margin: 1rem;
-        margin-bottom: 3rem;
-        font-size: 1.3rem;
-    }
-
-    main section img {
-        max-width: 300px;
-    }
+.drawer-closed .drawer-title .chevron {
+    transform: rotate3d(1,0,0,180deg);
+    z-index: 0;
 }
 
-@media only screen and (max-width: 85ch) {
-    main h1 {
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-    }
+.drawer-always-open .drawer-title .chevron{
+    opacity: 0;
+}
 
-    main section {
-        flex-direction: column;
+header.drawer {
+    margin: 0;
+}
 
-        margin: 0;
-        margin-bottom: 2rem;
-    }
+header.drawer .drawer-title .chevron {
+    margin-right: 0.5rem;
+}
 
-    main section div {
-        text-align: center;
-    }
+nav.drawer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
-    main section div p {
-        text-align: justify;
-    }
+header.drawer nav.drawer-content a {
+    padding: 0.5rem;
+}
 
-    main img, main section img {
-        max-width: 100%;
+/*drawers done*/
+/*everything to responsive duos*/
 
-        border-radius: 0;
-    }
+.responsive-duo {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    .contactcard div p{
-        text-align: center;
-    }
+.responsive-duo .junior {
+    flex: 1;
+    min-width: 30ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    main p {
-        font-size: 1.05em;
-    }
+    margin: 1rem;
+}
 
-    main section p {
-        font-size: 1.05em;
-    }
-
-    /**/
-    header {
-        flex-wrap: wrap;
-    }
-
-    header nav {
-        flex-basis: 100%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-    }
-
-    .mobile-show-default {
-        display: block;
-        transition-duration: 200ms;
-    }
+.responsive-duo .senior {
+    flex: 2;
     
-    .mobile-hide-default {
+    min-width: 45ch;
+    max-width: 70ch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*responsive duos done*/
+/*everything related to contact cards*/
+.card-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 35ch;
+
+    padding: 0.5rem;
+    margin:0.5rem;
+
+    flex: 1;
+    flex-basis: 200px;;
+}
+
+.card-name{
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.card-title {
+    margin-bottom: 1rem;
+    font-weight:500;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.card-body {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.8em;
+}
+/*
+.card-action {
+    
+}
+*/
+@media only screen and (min-width: 85ch) {
+    /*descontruct drawer on desktop (act as if always opened, hide chevron)*/
+    header.drawer#header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header.drawer#header .drawer-title {
+        flex: 0;
+    }
+    header.drawer#header .drawer-title .chevron {
         display: none;
     }
-    
-
-    .mobile-show-nav {
+    header.drawer#header nav.drawer-content {
         display: flex;
+        flex-direction: row;
     }
-
-    .flip {
-        transform: rotate3d(1,0,0,180deg);
-    }
-}
-
-.rounded-corners {
-    border-radius: 2ch;
+    /*header deconstructed*/
 }
 
 /*

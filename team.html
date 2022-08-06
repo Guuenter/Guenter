@@ -10,32 +10,35 @@
     <title>ibconsulting | Team</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <svg viewbox="-0.3 -0.3 6.6 1.6" height="3rem">
-                <path d="M 0 0
-                C 0 0, 0 0.7, 0.65 1
-                C 0.4 0.4, 0.8 0.5, 1 0.35
-                C 0.5 0.5, 0.1 0.3, 0 0
-                "
-                fill="#DE9E21"
-                stroke="transparent"
-                stroke-width="0"/>
-                <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
-                <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+    <header class="drawer drawer-closed" id="header">
+        <div class="drawer-title">
+            <a href="index.html">
+                <svg viewbox="-0.3 -0.3 6.9 1.6" height="3rem">
+                    <path d="
+                    M 0 0
+                    C 0 0, 0 0.7, 0.65 1
+                    C 0.4 0.4, 0.8 0.5, 1 0.35
+                    C 0.5 0.5, 0.1 0.3, 0 0
+                    "
+                    fill="#DE9E21"
+                    stroke="transparent"
+                    stroke-width="0"/>
+                    <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
+                    <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+                </svg>
+            </a>
+            <svg viewBox="0 0 1 1" height="2rem" class="animated-transitions chevron" onclick="toggleDrawer('header');" style="cursor: pointer;">
+                <path d="
+                M 0.1 0.7
+                L 0.5 0.3
+                L 0.9 0.7"
+                fill="transparent"
+                stroke="black" 
+                stroke-width="0.07"
+                stroke-linecap="round"/>
             </svg>
-        </a>
-        <svg viewBox="0 0 1 1" height="2rem" class="mobile-show-default" id="mobile-nav-toggle" onclick="toggle_mobile_nav();" style="cursor: pointer;">
-            <path d="
-            M 0.1 0.3
-            L 0.5 0.7
-            L 0.9 0.3"
-            fill="transparent"
-            stroke="black" 
-            stroke-width="0.07"
-            stroke-linecap="round"/>
-        </svg>
-        <nav class="mobile-hide-default" id="nav">
+        </div>
+        <nav class="drawer-content">
             <a href="about.html">
                 Über uns
             </a>
@@ -54,48 +57,160 @@
         </nav>
     </header>
     <main>
-        <h1>connecting students&nbsp;& businesses since&nbsp;1998</h1>
+        <h1>
+            <svg viewBox="-1 -1 25 3" width="100%;">
+                <text x="0" y="1" font-size="1" font-weight="500" font-family="Poppins">connecting students & businesses since 1998</text>
+                <line x1="17.7" y1="1.2" x2="22.5" y2="1.2" stroke="#DE9E21" stroke-width="0.2" stroke-linecap="round"></line>
+            </svg>
+        </h1>
         <img src="pictures/banner/WE1_3-1.jpg"/>
-        <h2>Team</h2>
-        <p class="center-text">
-            Aktuelle und ehemalige Mitglieder im Profil. 
-        </p>
-        <h3 id="WS22">Wintersemester 2022</h3>
-        <section id="WS22-Hannah-Sophie-Petrik" class="contactcard">
-            <img src="pictures/people/Hannah-Sophie-Petrik.jpg" class="rounded-corners" width="200"/>
-            <div>
-                <h4>Hannah Sophie Petrik<br><em>Head of Student Management Consultancy</em></h4>
-                <button onclick="window.location='https://www.linkedin.com/in/hannah-sophie-petrik-97476a1b2/';">Zum LinkedIn-Profil</button>
+        <section id="team" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Team</h2>
+                <svg onclick="toggleDrawer('team');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content">
+                <p>
+                    Aktuelle und ehemalige Mitglieder im Profil. 
+                </p>
             </div>
         </section>
-        <section id="WS22-Julia-Seckinger" class="contactcard">
-            <img src="pictures/people/Julia-Seckinger.jpg" class="rounded-corners" width="200"/>
-            <div>
-                <h4>Julia Seckinger<br><em>Head of Student Management Consultancy</em></h4>
-                <button onclick="window.location='https://de.linkedin.com/in/julia-seckinger';">Zum LinkedIn-Profil</button>
+        
+        <section id="WS22" class="drawer">
+            <div class="drawer-title">
+                <h3>Wintersemester 2022</h3>
+                <svg onclick="toggleDrawer('WS22');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+                <div id="Hannah-Sophie-Petrik" class="card-vertical">
+                    <img src="pictures/people/Hannah-Sophie-Petrik.jpg" width="200"/>
+                    <div class="card-name">
+                        Hannah Sophie Petrik
+                    </div>
+                    <div class="card-title">
+                        Studentische&nbsp;Vereinsleitung
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://www.linkedin.com/in/hannah-sophie-petrik-97476a1b2/';">LinkedIn-Profil</button>
+                    </div>
+                </div>
+                <div id="Julia-Seckinger" class="card-vertical">
+                    <img src="pictures/people/Julia-Seckinger.jpg" width="200"/>
+                    <div class="card-name">
+                        Julia Seckinger
+                    </div>
+                    <div class="card-title">
+                        Studentische&nbsp;Vereinsleitung
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://de.linkedin.com/in/julia-seckinger';">LinkedIn-Profil</button>
+                    </div>
+                </div>
+                <div id="Viktor-Stebner" class="card-vertical">
+                    <img src="pictures/people/Viktor-Stebner.jpg" width="200"/>
+                    <div class="card-name">
+                        Viktor Stebner
+                    </div>
+                    <div class="card-title">
+                        Studentische&nbsp;Vereinsleitung
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://de.linkedin.com/in/viktorstebner';">LinkedIn-Profil</button>
+                    </div>
+                </div>
+                <div id="John-Doe" class="card-vertical">
+                    <img src="pictures/CI/black-background/icon_256x256.png" width="200"/>
+                    <div class="card-name">
+                        John Doe
+                    </div>
+                    <div class="card-title">
+                        Studentischer&nbsp;Berater
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://de.linkedin.com/in/viktorstebner';">LinkedIn-Profil</button>
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="WS22-Viktor-Stebner" class="contactcard">
-            <img src="pictures/people/Viktor-Stebner.jpg" class="rounded-corners" width="200"/>
-            <div>
-                <h4>Viktor Stebner<br><em>Head of Student Management Consultancy</em></h4>
-                <button onclick="window.location='https://de.linkedin.com/in/viktorstebner';">Zum LinkedIn-Profil</button>
+        
+        <section id="SS22" class="drawer drawer-closed">
+            <div class="drawer-title">
+                <h3>Sommersemester 2022</h3>
+                <svg onclick="toggleDrawer('SS22');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+
             </div>
         </section>
-        <section id="WS22-John-Doe" class="contactcard">
-            <img src="pictures/CI/black-background/icon_256x256.png" class="rounded-corners" width="200"/>
-            <div>
-                <h4>John Doe<br><em>Volunteer Student Management Consultant</em></h4>
-                <button onclick="window.location='https://de.linkedin.com/in/viktorstebner';">Zum LinkedIn-Profil</button>
+
+        <section id="WS21" class="drawer drawer-closed">
+            <div class="drawer-title">
+                <h3>Wintersemester 2021</h3>
+                <svg onclick="toggleDrawer('WS21');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+                
             </div>
         </section>
-        <h3>Sommersemester 2022</h3>
-        <h3>Wintersemester 2021</h3>
-        <h3>Sommersemester 2021</h3>
-        <h3>Wintersemester 2020</h3>
-        <h3>Sommersemester 2020</h3>
-        <h3>Wintersemester 2019</h3>
-        <h3>Sommersemester 2019</h3>
+
+        <section id="SS21" class="drawer drawer-closed">
+            <div class="drawer-title">
+                <h3>Sommersemester 2021</h3>
+                <svg onclick="toggleDrawer('SS21');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+
+            </div>
+        </section>
+
+        <section id="WS20" class="drawer drawer-closed">
+            <div class="drawer-title">
+                <h3>Wintersemester 2020</h3>
+                <svg onclick="toggleDrawer('WS20');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+                
+            </div>
+        </section>
+
+        <section id="SS20" class="drawer drawer-closed">
+            <div class="drawer-title">
+                <h3>Sommersemester 2020</h3>
+                <svg onclick="toggleDrawer('SS20');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+
+            </div>
+        </section>
+
+        <section id="WS19" class="drawer drawer-closed">
+            <div class="drawer-title">
+                <h3>Wintersemester 2019</h3>
+                <svg onclick="toggleDrawer('WS19');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+                
+            </div>
+        </section>
+
+        <section id="SS19" class="drawer drawer-closed">
+            <div class="drawer-title">
+                <h3>Sommersemester 2019</h3>
+                <svg onclick="toggleDrawer('SS19');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+
+            </div>
+        </section>
         
     </main>
 

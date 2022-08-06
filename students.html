@@ -10,32 +10,35 @@
     <title>ibconsulting | Students</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <svg viewbox="-0.3 -0.3 6.6 1.6" height="3rem">
-                <path d="M 0 0
-                C 0 0, 0 0.7, 0.65 1
-                C 0.4 0.4, 0.8 0.5, 1 0.35
-                C 0.5 0.5, 0.1 0.3, 0 0
-                "
-                fill="#DE9E21"
-                stroke="transparent"
-                stroke-width="0"/>
-                <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
-                <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+    <header class="drawer drawer-closed" id="header">
+        <div class="drawer-title">
+            <a href="index.html">
+                <svg viewbox="-0.3 -0.3 6.9 1.6" height="3rem">
+                    <path d="
+                    M 0 0
+                    C 0 0, 0 0.7, 0.65 1
+                    C 0.4 0.4, 0.8 0.5, 1 0.35
+                    C 0.5 0.5, 0.1 0.3, 0 0
+                    "
+                    fill="#DE9E21"
+                    stroke="transparent"
+                    stroke-width="0"/>
+                    <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
+                    <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+                </svg>
+            </a>
+            <svg viewBox="0 0 1 1" height="2rem" class="animated-transitions chevron" onclick="toggleDrawer('header');" style="cursor: pointer;">
+                <path d="
+                M 0.1 0.7
+                L 0.5 0.3
+                L 0.9 0.7"
+                fill="transparent"
+                stroke="black" 
+                stroke-width="0.07"
+                stroke-linecap="round"/>
             </svg>
-        </a>
-        <svg viewBox="0 0 1 1" height="2rem" class="mobile-show-default" id="mobile-nav-toggle" onclick="toggle_mobile_nav();" style="cursor: pointer;">
-            <path d="
-            M 0.1 0.3
-            L 0.5 0.7
-            L 0.9 0.3"
-            fill="transparent"
-            stroke="black" 
-            stroke-width="0.07"
-            stroke-linecap="round"/>
-        </svg>
-        <nav class="mobile-hide-default" id="nav">
+        </div>
+        <nav class="drawer-content">
             <a href="about.html">
                 Über uns
             </a>
@@ -54,40 +57,93 @@
         </nav>
     </header>
     <main>
-        <h1>connecting students&nbsp;& businesses since&nbsp;1998</h1>
+        <h1>
+            <svg viewBox="-1 -1 25 3" width="100%;">
+                <text x="0" y="1" font-size="1" font-weight="500" font-family="Poppins">connecting students & businesses since 1998</text>
+                <line x1="17.7" y1="1.2" x2="22.5" y2="1.2" stroke="#DE9E21" stroke-width="0.2" stroke-linecap="round"></line>
+            </svg>
+        </h1>
         <img src="pictures/banner/GB2_3-1.jpg"/>
-        <h2>Studierende</h2>
-        <p class="regular-text">
-            Unsere studentischen Consultants gewinnen wertvolle Einblicke in die Wirtschaft und können frisch gelernte Vorlesungsinhalte unmittelbar in der Praxis anwenden. </br>
-            Sie streben vor allem Abschlüsse in wirtschaftlichen- oder wirtschaftspsychologischen Studiengängen an und finden nach ihrer Tätigkeit bei ibconsulting oft Praktika und Werkstudentenstellen bei unseren Partnern und Kunden. </br></br>
-        </p>
-        <h2>Praxisbezogene Weiterbildung</h2>
-        <p class="regular-text">
-            Zusammen mit unseren unternehmerischen Partnern erwerben unsere Mitglieder z.B. in Workshops neue Skills mit unmittelbarem Praxisbezug. Wir schärfen wertvolle Soft- und Hard-skills und bieten erste Berührungspunkte mit Industriestandards wie ISO&nbsp21502 oder ISO&nbsp9001. 
-            <br>So bereiten wir unsere Mitglieder vor, ihre persönliche Karriere auf einem starken Fuß zu starten. </br></br>  
-        </p>
-        <h2 class="center-text">Raum um Fach- & Führungskompetenzen zu beweisen</h2>
-        <p class="regular-text">
-            Während des Studiums lernt man sehr viel theoretisches Wissen. 
-            Wir bieten unseren Mitgliedern den Raum, dieses praktisch anzuwenden. 
-            Fachkompetenzen können in zahlreichen internen und externen Projekten gefestigt werden. 
-            Darüber hinaus können alle unserer Mitglieder in der Leitung von befristeten Projektteams erste Führungserfahrungen sammeln. </br></br>
-        </p>
-        <h2>Ein starkes Netzwerk</h2>
-        <p class="regular-text">
-            Neben dem Erwerb und der Schärfung von Fach- und Führungskompetenzen, 
-            werden unsere Mitglieder Teil eines starken Netzwerks von ambitionierten Studierenden, 
-            erfolgreichen Alumni und unseren Partnern aus der Wirtschaft. 
-            <br>Wir organisieren regelmäßig Aktivitäten zum Teambuilding und Netzwerken mit unseren ehemaligen Mitgliedern sowie unternehmerischen Partnern.
-            <br>So kommt es häufig vor, dass unsere Mitglieder nach ihrer Mitgliedschaft bei ibconsulting oftmals Beschäftigung bei unseren Partnern und Kunden finden. </br></br>
-        </p>
-        <h2>Dein Weg zur Mitgliedschaft</h2>
-        <p class="regular-text">
-            Du bist an der HFU eingeschrieben und möchtest Teil von uns werden? 
-            <br>Dann melde dich einfach bei <span style="font-weight: bold; white-space: nowrap;"><a href="mailto:info@ib-consulting.com">info@ib-consulting.com</a></span> oder direkt bei den Mitgliedern unseres Leitungsteams. Diese informieren dich gerne über die nächsten Schritte.
-            <br><br>
-        </p>
-        <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+        <section id="students" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Studierende</h2>
+                <svg onclick="toggleDrawer('students');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+                
+            </div>
+            <div class="drawer-content">
+                <p>
+                    Unsere studentischen Consultants gewinnen wertvolle Einblicke in die Wirtschaft und können frisch gelernte Vorlesungsinhalte unmittelbar in der Praxis anwenden. </br>
+                    Sie streben vor allem Abschlüsse in wirtschaftlichen- oder wirtschaftspsychologischen Studiengängen an und finden nach ihrer Tätigkeit bei ibconsulting oft Praktika und Werkstudentenstellen bei unseren Partnern und Kunden. </br></br>
+                </p>
+            </div>
+        </section>
+        
+        <section id="practical-training" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Praxisbezogene Weiterbildung</h2>
+                <svg onclick="toggleDrawer('practical-training');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+                
+            </div>
+            <div class="drawer-content">
+                <p>
+                    Zusammen mit unseren unternehmerischen Partnern erwerben unsere Mitglieder z.B. in Workshops neue Skills mit unmittelbarem Praxisbezug. Wir schärfen wertvolle Soft- und Hard-skills und bieten erste Berührungspunkte mit Industriestandards wie ISO&nbsp21502 oder ISO&nbsp9001. 
+                    <br>So bereiten wir unsere Mitglieder vor, ihre persönliche Karriere auf einem starken Fuß zu starten. </br></br>  
+                </p>
+            </div>
+        </section>
+
+        <section id="proving-ground" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Raum um Fach- & Führungskompetenzen zu beweisen</h2>
+                <svg onclick="toggleDrawer('proving-ground');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+                
+            </div>
+            <div class="drawer-content">
+                <p>
+                    Während des Studiums lernt man sehr viel theoretisches Wissen. 
+                    Wir bieten unseren Mitgliedern den Raum, dieses praktisch anzuwenden. 
+                    Fachkompetenzen können in zahlreichen internen und externen Projekten gefestigt werden. 
+                    Darüber hinaus können alle unserer Mitglieder in der Leitung von befristeten Projektteams erste Führungserfahrungen sammeln. </br></br>
+                </p>
+            </div>
+        </section>
+
+        <section id="network" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Ein starkes Netzwerk</h2>
+                <svg onclick="toggleDrawer('network');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+                
+            </div>
+            <div class="drawer-content">
+                <p>
+                    Neben dem Erwerb und der Schärfung von Fach- und Führungskompetenzen, 
+                    werden unsere Mitglieder Teil eines starken Netzwerks von ambitionierten Studierenden, 
+                    erfolgreichen Alumni und unseren Partnern aus der Wirtschaft. 
+                    <br>Wir organisieren regelmäßig Aktivitäten zum Teambuilding und Netzwerken mit unseren ehemaligen Mitgliedern sowie unternehmerischen Partnern.
+                    <br>So kommt es häufig vor, dass unsere Mitglieder nach ihrer Mitgliedschaft bei ibconsulting oftmals Beschäftigung bei unseren Partnern und Kunden finden. </br></br>
+                </p>
+            </div>
+        </section>
+        
+        <section id="join-us" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Dein Weg zur Mitgliedschaft</h2>
+            </div>
+            <div class="drawer-content responsive-duo">
+                <div class="senior">
+                    <p>
+                        Du bist an der HFU eingeschrieben und möchtest Teil von uns werden? 
+                        <br>Dann melde dich einfach bei <span style="font-weight: bold; white-space: nowrap;"><a href="mailto:info@ib-consulting.com">info@ib-consulting.com</a></span> oder direkt bei den Mitgliedern unseres Leitungsteams. Diese informieren dich gerne über die nächsten Schritte.
+                        <br><br>
+                    </p>
+                    <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+                </div>
+                <div class="junior">
+                    <!---->
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
