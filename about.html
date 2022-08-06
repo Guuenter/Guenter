@@ -10,32 +10,35 @@
     <title>ibconsulting | About</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <svg viewbox="-0.3 -0.3 6.6 1.6" height="3rem">
-                <path d="M 0 0
-                C 0 0, 0 0.7, 0.65 1
-                C 0.4 0.4, 0.8 0.5, 1 0.35
-                C 0.5 0.5, 0.1 0.3, 0 0
-                "
-                fill="#DE9E21"
-                stroke="transparent"
-                stroke-width="0"/>
-                <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
-                <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+    <header class="drawer drawer-closed" id="header">
+        <div class="drawer-title">
+            <a href="index.html">
+                <svg viewbox="-0.3 -0.3 6.9 1.6" height="3rem">
+                    <path d="
+                    M 0 0
+                    C 0 0, 0 0.7, 0.65 1
+                    C 0.4 0.4, 0.8 0.5, 1 0.35
+                    C 0.5 0.5, 0.1 0.3, 0 0
+                    "
+                    fill="#DE9E21"
+                    stroke="transparent"
+                    stroke-width="0"/>
+                    <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
+                    <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+                </svg>
+            </a>
+            <svg viewBox="0 0 1 1" height="2rem" class="animated-transitions chevron" onclick="toggleDrawer('header');" style="cursor: pointer;">
+                <path d="
+                M 0.1 0.7
+                L 0.5 0.3
+                L 0.9 0.7"
+                fill="transparent"
+                stroke="black" 
+                stroke-width="0.07"
+                stroke-linecap="round"/>
             </svg>
-        </a>
-        <svg viewBox="0 0 1 1" height="2rem" class="mobile-show-default" id="mobile-nav-toggle" onclick="toggle_mobile_nav();" style="cursor: pointer;">
-            <path d="
-            M 0.1 0.3
-            L 0.5 0.7
-            L 0.9 0.3"
-            fill="transparent"
-            stroke="black" 
-            stroke-width="0.07"
-            stroke-linecap="round"/>
-        </svg>
-        <nav class="mobile-hide-default" id="nav">
+        </div>
+        <nav class="drawer-content">
             <a href="about.html">
                 Über uns
             </a>
@@ -54,49 +57,105 @@
         </nav>
     </header>
     <main>
-        <h1>connecting students&nbsp;& businesses since&nbsp;1998</h1>
+        <h1>
+            <svg viewBox="-1 -1 25 3" width="100%;">
+                <text x="0" y="1" font-size="1" font-weight="500" font-family="Poppins">connecting students & businesses since 1998</text>
+                <line x1="17.7" y1="1.2" x2="22.5" y2="1.2" stroke="#DE9E21" stroke-width="0.2" stroke-linecap="round"></line>
+            </svg>
+        </h1>
         <img src="pictures/banner/GB1_3-1.jpg"/>
-        <h2>Über uns</h2>
-        <p class="regular-text">
-            International Business Consulting e.V. wurde 1998 gegründet und soll die <!--bietet eine Schnittstelle zwischen...-->die Zusammenarbeit zwischen Studierenden der Hochschule Furtwangen und lokalen Unternehmen vereinfachen. </br></br>
-            Wir sind eine studentische Unternehmensberatung - das bedeutet, dass unsere studentischen Mitglieder als Berater für Unternehmen tätig werden. 
-            Unternehmen profitieren von der unkomplizierten Verfügbarkeit unserer studentischen Mitglieder, 
-            ohne sich im Voraus dauerhaft an diese binden zu müssen. 
-            Gleichzeitig bringen unsere Mitglieder Expertise in verschiedenen betriebswirtschaftlichen Themenfeldern und neue Perspektiven in den Prozess der Problemlösungsfindung ein. </br></br>
-        </p>
-        <h2>Unsere Vision</h2>
-        <p class="regular-text">
-            Wir möchten jedem Mitglied die nötige Unterstützung bieten, um Erfahrungen zu sammeln und einen geeigneten Raum für praxisbezogenes Lernen schaffen. </br>Unsere Mitglieder entwickeln dabei ein enges Netzwerk untereinander und mit unseren unternehmerischen Partnern. </br></br>
-        </p>
-        <h2>Unsere Mission</h2>
-        <p class="regular-text">
-            Wir bieten unseren Mitgliedern einen sicheren Raum um sich professionell zu entfalten und unterstützen sie bei ihren ersten Schritten in der Wirtschaft. </br>Wir fördern die Entwicklung eines starken Netzwerks durch Teambuilding- sowie Networking-Aktivitäten mit unseren Partnern und durch die Kultur, die wir im Umgang miteinander pflegen. </br></br>
-        </p>
-        <h2>Vorstand</h2>
-        <section id="Lederer">
-            <img src="pictures/people/Lederer.jpg" class="rounded-corners"/>
-            <div>
-                <h3>Prof. Dr. Michael Lederer</h3>
-                <!--<p></p>-->
-                <button onclick="window.location='https://www.hs-furtwangen.de/personen/profil/104-michaellederer/';">Zum Hochschulprofil</button>
+        <section id="about" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Über uns</h2>
+                <svg onclick="toggleDrawer('about');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+                
+            </div>
+            <div class="drawer-content">
+                <p>
+                    International Business Consulting e.V. wurde 1998 gegründet und soll die <!--bietet eine Schnittstelle zwischen...-->die Zusammenarbeit zwischen Studierenden der Hochschule Furtwangen und lokalen Unternehmen vereinfachen. </br></br>
+                    Wir sind eine studentische Unternehmensberatung - das bedeutet, dass unsere studentischen Mitglieder als Berater für Unternehmen tätig werden. 
+                    Unternehmen profitieren von der unkomplizierten Verfügbarkeit unserer studentischen Mitglieder, 
+                    ohne sich im Voraus dauerhaft an diese binden zu müssen. 
+                    Gleichzeitig bringen unsere Mitglieder Expertise in verschiedenen betriebswirtschaftlichen Themenfeldern und neue Perspektiven in den Prozess der Problemlösungsfindung ein. </br></br>
+                </p>
             </div>
         </section>
-        <section id="Conzelmann">
-            <img src="pictures/people/Conzelmann.jpg" class="rounded-corners"/>
-            <div>
-                <h3>Prof. Dr. Rütger Conzelmann</h3>
-                <!--<p></p>-->
-                <button onclick="window.location='https://www.hs-furtwangen.de/personen/profil/35-ruetgerconzelmann/';">Zum Hochschulprofil</button>
+
+        <section id="vision" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Unsere Vision</h2>
+                <svg onclick="toggleDrawer('vision');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+                
+            </div>
+            <div class="drawer-content">
+                <p>
+                    Wir möchten jedem Mitglied die nötige Unterstützung bieten, um Erfahrungen zu sammeln und einen geeigneten Raum für praxisbezogenes Lernen schaffen. </br>Unsere Mitglieder entwickeln dabei ein enges Netzwerk untereinander und mit unseren unternehmerischen Partnern. </br></br>
+                </p>
             </div>
         </section>
-        <section id="Kirner">
-            <img src="pictures/people/Kirner.jpg" class="rounded-corners"/>
-            <div>
-                <h3>Prof. Dr. Eva Kirner</h3>
-                <!--<p></p>-->
-                <button onclick="window.location='https://www.hs-furtwangen.de/personen/profil/29-evakirner/';">Zum Hochschulprofil</button>
+
+        <section id="mission" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Unsere Mission</h2>
+                <svg onclick="toggleDrawer('mission');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+                
+            </div>
+            <div class="drawer-content">
+                <p>
+                    Wir bieten unseren Mitgliedern einen sicheren Raum um sich professionell zu entfalten und unterstützen sie bei ihren ersten Schritten in der Wirtschaft. </br>Wir fördern die Entwicklung eines starken Netzwerks durch Teambuilding- sowie Networking-Aktivitäten mit unseren Partnern und durch die Kultur, die wir im Umgang miteinander pflegen. </br></br>
+                </p>
             </div>
         </section>
+
+        <section id="vorstand" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Vorstand</h2>
+                <svg onclick="toggleDrawer('vorstand');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content card-display">
+                <div id="Lederer" class="card-vertical">
+                    <img src="pictures/people/Lederer.jpg" width="200"/>
+                    <div class="card-name">
+                        Prof. Dr. Michael Lederer
+                    </div>
+                    <div class="card-title">
+                        Vorstand
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://www.hs-furtwangen.de/personen/profil/104-michaellederer/';">Zum Hochschulprofil</button>
+                    </div>
+                </div>
+
+                <div id="Conzelmann" class="card-vertical">
+                    <img src="pictures/people/Conzelmann.jpg" width="200"/>
+                    <div class="card-name">
+                        Prof. Dr. Rütger Conzelmann
+                    </div>
+                    <div class="card-title">
+                        Vorstand
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://www.hs-furtwangen.de/personen/profil/35-ruetgerconzelmann/';">Zum Hochschulprofil</button>
+                    </div>
+                </div>
+
+                <div id="Kirner" class="card-vertical">
+                    <img src="pictures/people/Kirner.jpg" width="200"/>
+                    <div class="card-name">
+                        Prof. Dr. Eva Kirner
+                    </div>
+                    <div class="card-title">
+                        Vorstand
+                    </div>
+                    <div class="card-action">
+                        <button onclick="window.location='https://www.hs-furtwangen.de/personen/profil/29-evakirner/';">Zum Hochschulprofil</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
     </main>
 
     <footer>

@@ -10,32 +10,35 @@
     <title>ibconsulting | Businesses</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <svg viewbox="-0.3 -0.3 6.6 1.6" height="3rem">
-                <path d="M 0 0
-                C 0 0, 0 0.7, 0.65 1
-                C 0.4 0.4, 0.8 0.5, 1 0.35
-                C 0.5 0.5, 0.1 0.3, 0 0
-                "
-                fill="#DE9E21"
-                stroke="transparent"
-                stroke-width="0"/>
-                <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
-                <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+    <header class="drawer drawer-closed" id="header">
+        <div class="drawer-title">
+            <a href="index.html">
+                <svg viewbox="-0.3 -0.3 6.9 1.6" height="3rem">
+                    <path d="
+                    M 0 0
+                    C 0 0, 0 0.7, 0.65 1
+                    C 0.4 0.4, 0.8 0.5, 1 0.35
+                    C 0.5 0.5, 0.1 0.3, 0 0
+                    "
+                    fill="#DE9E21"
+                    stroke="transparent"
+                    stroke-width="0"/>
+                    <circle cx="0.5" cy="0.15" r="0.12" stroke="transparent" fill="#DE9E21" stroke-width="0"/>
+                    <text x="1.3" y="0.85" fill="black" font-family="Poppins" font-size="0.8" font-weight="500">ibconsulting</text>
+                </svg>
+            </a>
+            <svg viewBox="0 0 1 1" height="2rem" class="animated-transitions chevron" onclick="toggleDrawer('header');" style="cursor: pointer;">
+                <path d="
+                M 0.1 0.7
+                L 0.5 0.3
+                L 0.9 0.7"
+                fill="transparent"
+                stroke="black" 
+                stroke-width="0.07"
+                stroke-linecap="round"/>
             </svg>
-        </a>
-        <svg viewBox="0 0 1 1" height="2rem" class="mobile-show-default" id="mobile-nav-toggle" onclick="toggle_mobile_nav();" style="cursor: pointer;">
-            <path d="
-            M 0.1 0.3
-            L 0.5 0.7
-            L 0.9 0.3"
-            fill="transparent"
-            stroke="black" 
-            stroke-width="0.07"
-            stroke-linecap="round"/>
-        </svg>
-        <nav class="mobile-hide-default" id="nav">
+        </div>
+        <nav class="drawer-content">
             <a href="about.html">
                 Über uns
             </a>
@@ -54,96 +57,173 @@
         </nav>
     </header>
     <main>
-        <h1>connecting students&nbsp;& businesses since&nbsp;1998</h1>
+        <h1>
+            <svg viewBox="-1 -1 25 3" width="100%;">
+                <text x="0" y="1" font-size="1" font-weight="500" font-family="Poppins">connecting students & businesses since 1998</text>
+                <line x1="17.7" y1="1.2" x2="22.5" y2="1.2" stroke="#DE9E21" stroke-width="0.2" stroke-linecap="round"></line>
+            </svg>
+        </h1>
         <img src="pictures/banner/unsplash_3-1.jpg"/>
-        <h2>Unternehmen</h2>
-        <p class="regular-text">
-            Neben unseren studentischen Mitgliedern profitieren natürlich auch unsere unternehmerischen Partner. 
-            Dabei gibt es verschiedene Möglichkeiten zur Zusammenarbeit:
-        </p>
-        <h2>Maßgeschneiderte Projekte</h2>
-        <p class="regular-text">
-            Sie haben ein klares Bild davon was Sie benötigen? <br>
-            Dann freuen wir uns auf Ihre Anfrage! <br>
-            Als studentische Unternehmensberatung möchten wir unseren Mitgliedern möglichst vielfältige Einblicke in die Wirtschaft bieten. 
-            Diese gehen idealerweise über unser bestehendes Angebot von Dienstleistungen hinaus. 
-        </p>
-        <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
-        <h2>Unser bestehendes Angebot</h2>
-        <section id="mitarbeiterbefragung">
-            <img src="pictures/CI/black-background/icon_512x512.png" class="rounded-corners"/>
-            <!--ballot box-->
-            <div>
-                <h3>Anonyme Mitarbeiterbefragungen<br><em>HR / Personalwesen</em></h3>
-                <p class="regular-text">
-                    Wenn Sie selbst eine Mitarbeiterbefragung durchführen wollen, 
-                    haben Sie fast immer mit dem Misstrauen Ihrer Mitarbeiter zu kämpfen. 
-                    Unabhängig davon, ob die Befragung tatsächlich anonym ist und wie oft Sie die Anonymität der Befragung betonen: 
-                    Spätestens beim Ausfüllen der Fragebögen werden sich Ihre Mitarbeiter schnell bewusst, 
-                    dass ihre Antworten Rückschlüsse auf ihre Identität zulassen - besonders wenn sie gerne detailliertes Feedback geben würden. <br><br>
-                    Deshalb muss - neben der Befragung selbst - auch die Auswertung anonymisiert stattfinden. Wir bieten Ihnen deshalb anonymisierte Mitarbeiterbefragungen in vollem Umfang an. Dabei kommen dann entweder Ihre eigenen, oder die Fragebögen unserer wirtschaftpsychologischen Consultants zum Einsatz. <br><br>
-                    Wir kümmern uns von A bis Z um die Erfassung, die Auswertung und das Berichten der Erkenntnisse an Sie.
+        <section id="companies" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Unternehmen</h2>
+                <svg onclick="toggleDrawer('companies');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content">
+                <p>
+                    Neben unseren studentischen Mitgliedern profitieren natürlich auch unsere unternehmerischen Partner. 
+                    Dabei gibt es verschiedene Möglichkeiten zur Zusammenarbeit:
                 </p>
-                <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
             </div>
         </section>
-        <section id="kundenbefragung">
-            <img src="pictures/CI/black-background/icon_512x512.png" class="rounded-corners"/>
-            <!--thumbs up/down-->
-            <div>
-                <h3>Kundenbefragung<br><em>Marketing / Vertrieb</em></h3>
-                <p class="regular-text">
-                    Haben Sie jemals einem neuen Friseur ehrlich gesagt, dass Ihnen der Haarschnitt nicht wirklich gefällt? Das haben die wenigsten. Wir auch nicht. Man besucht beim nächsten Mal einfach einen Wettbewerber. 
-                    Ähnliches gilt natürlich auch für die Gastronomie und viele weitere B2C Unternehmen.<br><br>
-                    Unsere wirtschaftspsychologischen Consultants wissen dass Sie selbst nur sehr wenig tun können, um ehrliches Kundenfeedback zu bekommen. Wir verschaffen Ihnen kreative Abhilfe: In Präsenz am POS - oder bei der Entwicklung von Konzepten die Sie selbst durchführen können.
-                </p>
-                <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+        <section id="customprojects" class="drawer drawer-always-open">
+            <div class="drawer-title">
+                <h2>Maßgeschneiderte Projekte</h2>
+                <svg onclick="toggleDrawer('customprojects');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+            </div>
+            <div class="drawer-content responsive-duo">
+                <div class="senior">
+                    <p>
+                        Sie haben ein klares Bild davon was Sie benötigen? <br>
+                        Dann freuen wir uns auf Ihre Anfrage! <br>
+                        Als studentische Unternehmensberatung möchten wir unseren Mitgliedern möglichst vielfältige Einblicke in die Wirtschaft bieten. 
+                        Diese gehen idealerweise über unser bestehendes Angebot von Dienstleistungen hinaus. 
+                    </p>
+                    <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+                </div>
+                <div class="junior">
+                    <img src="pictures/CI/black-background/icon_256x256.png"/>
+                </div>
             </div>
         </section>
-        <section id="marktforschung">
-            <!--clipboard?-->
-            <img src="pictures/CI/black-background/icon_512x512.png" class="rounded-corners"/>
-            <div>
-                <h3>Marktforschung<br><em>Marketing / Vertrieb</em></h3>
-                <p class="regular-text">
-                    Gerade in fortgeschrittenen Studiensemestern haben unsere Mitglieder oft schon erste Erfahrungen in der Marktforschung gesammelt. 
-                    Sei es aus Vorlesungen, Forschungsprojekten oder Thesis: Unsere erfahrenen Consultants kennen vielfältige Strategien und Methoden zur qualitativen und/oder quantitativen Marktforschung. 
-                    <br><br>
-                    Gerne arbeiten wir gemeinsam mit Ihnen ein geeignetes Konzept aus. Je nach Wunsch entweder zur Durchführung durch unsere Consultants - oder durch Ihre eigenen Mitarbeiter.
-                </p>
-                <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+        
+        <section id="services" class="drawer">
+            <div class="drawer-title">
+                <h2>Unser bestehendes Angebot</h2>
+                <svg onclick="toggleDrawer('services');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
             </div>
-        </section>
-        <section id="socialmediasupport">
-            <img src="pictures/CI/black-background/icon_512x512.png" class="rounded-corners"/>
-            <!--?-->
-            <div>
-                <h3>Digitale Präsenzberatung<br><em>Social Media Marketing</em></h3>
-                <p class="regular-text">
-                    Wir sind nicht nur mit Internet und sozialen Medien aufgewachsen: 
-                    In verschiedenen Vorlesungen lernen wir ausgiebig, worauf es bei einer effektiven digitalen Präsenz ankommt. 
-                    Egal ob Website oder Social Media Profil, 
-                    wir unterstützen Sie mit qualifiziertem Feedback oder übernehmen die Pflege Ihrer digitalen Präsenz.
-                </p>
-                <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+            <div class="drawer-content">
+                <div id="mitarbeiterbefragung" class="drawer drawer-closed">
+                    <div class="drawer-title">
+                        <h3>Anonyme Mitarbeiterbefragungen<br><em>HR / Personalwesen</em></h3>
+                        <svg onclick="toggleDrawer('mitarbeiterbefragung');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+
+                    </div>
+                    <div class="drawer-content responsive-duo">
+                        <div class="junior">
+                            <img src="pictures/CI/black-background/icon_256x256.png"/>
+                            <!--ballot box-->
+                        </div>
+                        <div class="senior">
+                            <p>
+                                Wenn Sie selbst eine Mitarbeiterbefragung durchführen wollen, 
+                                haben Sie fast immer mit dem Misstrauen Ihrer Mitarbeiter zu kämpfen. 
+                                Unabhängig davon, ob die Befragung tatsächlich anonym ist und wie oft Sie die Anonymität der Befragung betonen: 
+                                Spätestens beim Ausfüllen der Fragebögen werden sich Ihre Mitarbeiter schnell bewusst, 
+                                dass ihre Antworten Rückschlüsse auf ihre Identität zulassen - besonders wenn sie gerne detailliertes Feedback geben würden. <br><br>
+                                Deshalb muss - neben der Befragung selbst - auch die Auswertung anonymisiert stattfinden. Wir bieten Ihnen deshalb anonymisierte Mitarbeiterbefragungen in vollem Umfang an. Dabei kommen dann entweder Ihre eigenen, oder die Fragebögen unserer wirtschaftpsychologischen Consultants zum Einsatz. <br><br>
+                                Wir kümmern uns von A bis Z um die Erfassung, die Auswertung und das Berichten der Erkenntnisse an Sie.
+                            </p>
+                            <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+    
+                        </div>
+                    </div>
+                </div>
+                <div id="kundenbefragung" class="drawer drawer-closed">
+                    <div class="drawer-title">
+                        <h3>Kundenbefragung<br><em>Marketing / Vertrieb</em></h3>
+                        <svg onclick="toggleDrawer('kundenbefragung');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+    
+                    </div>
+                    <div class="drawer-content responsive-duo">
+                        <div class="junior">
+                            <img src="pictures/CI/black-background/icon_256x256.png"/>
+                            <!--thumbs up/down-->
+                        </div>
+                        <div class="senior">
+                            <p>
+                                Haben Sie jemals einem neuen Friseur ehrlich gesagt, dass Ihnen der Haarschnitt nicht wirklich gefällt? Das haben die wenigsten. Wir auch nicht. Man besucht beim nächsten Mal einfach einen Wettbewerber. 
+                                Ähnliches gilt natürlich auch für die Gastronomie und viele weitere B2C Unternehmen.<br><br>
+                                Unsere wirtschaftspsychologischen Consultants wissen dass Sie selbst nur sehr wenig tun können, um ehrliches Kundenfeedback zu bekommen. Wir verschaffen Ihnen kreative Abhilfe: In Präsenz am POS - oder bei der Entwicklung von Konzepten die Sie selbst durchführen können.
+                            </p>
+                            <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="marktforschung" class="drawer drawer-closed">
+                    <div class="drawer-title">
+                        <h3>Marktforschung<br><em>Marketing / Vertrieb</em></h3>
+                        <svg onclick="toggleDrawer('marktforschung');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+    
+                    </div>
+                    <div class="drawer-content responsive-duo">
+                        <div class="junior">
+                                <!--clipboard?-->
+                                <img src="pictures/CI/black-background/icon_256x256.png"/>       
+                        </div>
+                        <div class="senior">
+                            <p>
+                                Gerade in fortgeschrittenen Studiensemestern haben unsere Mitglieder oft schon erste Erfahrungen in der Marktforschung gesammelt. 
+                                Sei es aus Vorlesungen, Forschungsprojekten oder Thesis: Unsere erfahrenen Consultants kennen vielfältige Strategien und Methoden zur qualitativen und/oder quantitativen Marktforschung. 
+                                <br><br>
+                                Gerne arbeiten wir gemeinsam mit Ihnen ein geeignetes Konzept aus. Je nach Wunsch entweder zur Durchführung durch unsere Consultants - oder durch Ihre eigenen Mitarbeiter.
+                            </p>
+                            <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="socialmediasupport" class="drawer drawer-closed">
+                    <div class="drawer-title">
+                        <h3>Digitale Präsenzberatung<br><em>Social Media Marketing</em></h3>
+                        <svg onclick="toggleDrawer('socialmediasupport');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+        
+                    </div>
+                    <div class="drawer-content responsive-duo">
+                        <div class="junior">
+                            <img src="pictures/CI/black-background/icon_256x256.png"/>
+                            <!--?-->
+                        </div>
+                        <div class="senior">
+                            <p>
+                                Wir sind nicht nur mit Internet und sozialen Medien aufgewachsen: 
+                                In verschiedenen Vorlesungen lernen wir ausgiebig, worauf es bei einer effektiven digitalen Präsenz ankommt. 
+                                Egal ob Website oder Social Media Profil, 
+                                wir unterstützen Sie mit qualifiziertem Feedback oder übernehmen die Pflege Ihrer digitalen Präsenz.
+                            </p>
+                            <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="strategieberatung" class="drawer drawer-closed">
+                    <div class="drawer-title">
+                        <h3>Strategieberatung<br><em>Strategy / Business Development</em></h3>
+                        <svg onclick="toggleDrawer('strategieberatung');" viewBox="0 0 1 1" height="1.5rem" class="animated-transitions chevron" style="cursor: pointer;"><path d="M 0.1 0.7 L 0.5 0.3 L 0.9 0.7" fill="transparent" stroke="black" stroke-width="0.07" stroke-linecap="round"/></svg>
+            
+                    </div>
+                    <div class="drawer-content responsive-duo">
+                        <div class="junior">
+                            <!--group picture-->
+                            <img src="pictures/CI/black-background/icon_256x256.png"/>
+                        </div>
+                        <div class="senior"> 
+                            <p>
+                                Als Studenten machen wir uns nicht vor, die größten Experten zur strategischen Ausrichtung ihres Unternehmens zu sein. 
+                                Sie selbst kennen Ihr Unternehmen und Ihre Prozesse am besten. Ihre Strategie hat Sie bis zu diesem Punkt gebracht, das bedeutet dass Sie einiges sehr richtig machen. 
+                                <br><br>
+                                Trotzdem können wir bestimmten Unternehmen einen wertvollen Mehrwert beiten: Wir helfen Kleinstunternehmen beim Sprung in die nächste Größenordnung. <br>
+                                Als Gründer wissen Sie schon wie Sie für ihre Kunden Wert schöpfen können. Sie haben den Sprung in die Selbstständigkeit geschafft. Wenn es jetzt aber darum geht mehr als eine handvoll Mitarbeiter zu führen, stehen Ihnen unsere studentischen Vereinsleiter beratend zur Seite: 
+                                <br>
+                                Sie sind Experten im Umgang mit neuen Mitarbeitern, hoher Fluktuation und in der Führung von Teams von 10-40 Personen.
+                            </p>
+                            <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section id="strategieberatung">
-            <!--group picture-->
-            <img src="pictures/CI/black-background/icon_512x512.png" class="rounded-corners"/>
-            <div>
-                <h3>Strategieberatung<br><em>Strategy / Business Development</em></h3>
-                <p class="regular-text">
-                    Als Studenten machen wir uns nicht vor, die größten Experten zur strategischen Ausrichtung ihres Unternehmens zu sein. 
-                    Sie selbst kennen Ihr Unternehmen und Ihre Prozesse am besten. Ihre Strategie hat Sie bis zu diesem Punkt gebracht, das bedeutet dass Sie einiges sehr richtig machen. 
-                    <br><br>
-                    Trotzdem können wir bestimmten Unternehmen einen wertvollen Mehrwert beiten: Wir helfen Kleinstunternehmen beim Sprung in die nächste Größenordnung. <br>
-                    Als Gründer wissen Sie schon wie Sie für ihre Kunden Wert schöpfen können. Sie haben den Sprung in die Selbstständigkeit geschafft. Wenn es jetzt aber darum geht mehr als eine handvoll Mitarbeiter zu führen, stehen Ihnen unsere studentischen Vereinsleiter beratend zur Seite: 
-                    <br>
-                    Sie sind Experten im Umgang mit neuen Mitarbeitern, hoher Fluktuation und in der Führung von Teams von 10-40 Personen.
-                </p>
-                <button onclick="window.location='contact.html#ansprechpartner';">Ansprechpartner</button>
-            </div>
+            
         </section>
     </main>
 
