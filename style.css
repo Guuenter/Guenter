@@ -228,22 +228,21 @@ header.drawer nav.drawer-content a {
 }
 
 .card-title {
-    margin-bottom: 1rem;
     font-weight:500;
     font-style: italic;
     font-size: 1.1em;
 }
 
 .card-body {
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     text-align: center;
     font-size: 0.8em;
 }
-/*
+
 .card-action {
-    
+    margin-top: 1rem;
 }
-*/
+
 @media only screen and (min-width: 85ch) {
     /*descontruct drawer on desktop (act as if always opened, hide chevron)*/
     header.drawer#header {
