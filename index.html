@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="instructions">
+        <h1>Instructions</h1>
+        <ul>
+            <li>
+                This is a "fixation cross":
+                <br><img src="Images/000_fixation-cross.png"/>
+                <br>When this symbol appears, keep your eyes fixed on it. 
+                <br>Do not look away from the center of the fixation cross.</li>
+            <li>You will briefly see pictures of people</li>
+            <li>Do not move your eyes, always keep looking at the "fixation cross" in the middle of the screen </li>
+            <li>
+                After each picture, you will be asked to intuitively rate the attractiveness of the person at the center of the screen using a sliding scale like this: 
+                <br><br><input type="range" min=0 max=100 value=50/>
+                <br>
+            </li>
+            <li>Move the slider right if you think the person was attractive</li>
+            <li>Move the slider left if you think the person was <b>not</b> attractive</li>
+            <li>After making a rating, click "continue" to see the next picture</li>
+            <li>You will only see each picture for a fraction of a second, so try to stay as focussed as possible</li>
+            <li>The experiment can be completed in as little as 6 minutes, but this depends on your speed. You will be shown 62 pictures. </li>
+        </ul>
+        
+        
+
+    </div>
+    <input type="range" id="slider" min=0 max=100 value=50 class="hidden"/>
+    <input type="button" id="continue-button" value="Continue"/>
+    <input type="button" id="download-button" value="Download Results" class="hidden"/>
+    <img src="Images/027_scramble-0.jpg" id="stimulus-center" class="stimulus hidden"/>
+    <img src="Images/002_scramble-1.jpg" id="stimulus-left" class="stimulus hidden"/>
+    <img src="Images/014_scramble-1.jpg" id="stimulus-right" class="stimulus hidden"/>
+    <img src="Images/000_fixation-cross.png" id="fixation-cross" class="hidden">
+    <img src="Images/000_noise-mask.png" id="noise-mask" class="hidden"/>
+    <script src="script.js"></script>
+</body>
+</html>

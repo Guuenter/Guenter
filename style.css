@@ -1,0 +1,92 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+/*
+input[type="range"] {
+    width: 100%;
+}
+*/
+#instructions {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+    margin: 2ch;
+}
+
+#fixation-cross{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+#noise-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
+#slider {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+}
+
+#continue-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+}
+
+#download-button {
+    position: absolute;
+    width: 20ch;
+    height: 6ch;
+    top: 50%;
+    left: 50%;
+    margin-left: -10ch;
+    margin-top: -3ch;
+    padding: 10px;
+}
+
+#stimulus-center {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -150px;
+    margin-top: -100px;
+}
+
+#stimulus-left {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    margin-top: -100px;
+}
+
+#stimulus-right {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: 50px;
+    margin-top: -150px;
+    margin-top: -100px;
+}
+
+.hidden {
+    display: none;
+}
