@@ -6,95 +6,119 @@ function shuffle(a) {
     return a;
 }
 
-var leftOrder = [];
-var rightOrder = [];
-for(var i = 1; i<32; i++) {
-    leftOrder.push(("000" + i).slice (-3));
-    rightOrder.push(("000" + i).slice (-3));
+function hide(id) {
+    document.getElementById(id).classList.add("hidden");
 }
 
-shuffle(leftOrder);
-shuffle(rightOrder);
-
-var finalOrder = [];
-var shuffleDegree = (Math.floor(Math.random() * 2) + 1);
-for(var i = 1; i<32; i++) {
-    finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 0])
-    finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], shuffleDegree])
+function show(id) {
+    document.getElementById(id).classList.remove("hidden");
 }
 
-shuffle(finalOrder);
+function hidePictures() {
+    for (var i = 0; i < stimuli.length; i++) {
+        stimuli.item(i).classList.add("hidden");
+    }
+}
 
-var progress = 0;
-function updateStimuli() {
+function showPictures() {
+    for (var i = 0; i < stimuli.length; i++) {
+        stimuli.item(i).classList.remove("hidden");
+    }
+}
+
+function initialiseExperiment() {
+    var leftOrder = [];
+    var rightOrder = [];
+    for(var i = 1; i<32; i++) {
+        leftOrder.push(("000" + i).slice (-3));
+        rightOrder.push(("000" + i).slice (-3));
+    }
+
+    shuffle(leftOrder);
+    shuffle(rightOrder);
+
+    var shuffleDegree = (Math.floor(Math.random() * 2) + 1);
+    for(var i = 1; i<32; i++) {
+        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 0])
+        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], shuffleDegree])
+    }
+
+    shuffle(finalOrder);
+}
+
+function swapPictures() {
     document.getElementById("stimulus-left").src = "Images/" + finalOrder[progress][0] + "_scramble-" + finalOrder[progress][3] + ".jpg";
     document.getElementById("stimulus-center").src = "Images/" + finalOrder[progress][1] + "_scramble-" + "0" + ".jpg";
     document.getElementById("stimulus-right").src = "Images/" + finalOrder[progress][2] + "_scramble-" + finalOrder[progress][3] + ".jpg";
 }
 
-updateStimuli();
+var stimuli = document.getElementsByClassName("stimulus");
+var finalOrder = [];
+var progress = 0;
+initialiseExperiment();
+swapPictures();
+
+
+
+
+
+
 
 document.getElementById("continue-button").addEventListener("click", function(event) {
+    if(progress>61) {
+        hide("continue-button");
+        hide("slider");
+        show("download-button");
+        return;
+    }
     if(progress>0) {
         finalOrder[progress - 1].push("" + document.getElementById("slider").value);
     }
-    if(progress==62) {
-        document.getElementById("continue-button").classList.add("hidden");
-        document.getElementById("slider").classList.add("hidden");
-        document.getElementById("download-button").classList.remove("hidden");
-        return;
-    }
+    
 
-    var stimuli = document.getElementsByClassName("stimulus");
-        
-    document.getElementById("continue-button").classList.add("hidden");
-    document.getElementById("instructions").classList.add("hidden");
-    document.getElementById("slider").classList.add("hidden");
-    document.getElementById("slider").value = 50;
-    document.getElementById("noise-mask").classList.remove("hidden");
+    hide("continue-button");
+    hide("instructions");
+    hide("slider");
+    
+    show("noise-mask");
 
     setTimeout(() => {
-        document.getElementById("noise-mask").classList.add("hidden");
-        document.getElementById("slider").classList.add("hidden");
-        document.getElementById("fixation-cross").classList.remove("hidden");
+        hide("noise-mask");
+        hide("slider");
+        show("fixation-cross");
     }, 300);
 
     setTimeout(() => {
-        for (var i = 0; i < stimuli.length; i++) {
-            stimuli.item(i).classList.remove("hidden");
-        }
+        hide("fixation-cross");
+        showPictures();
     }, 2300);
 
     setTimeout(() => {
-        for (var i = 0; i < stimuli.length; i++) {
-            stimuli.item(i).classList.add("hidden");
-        }
-        document.getElementById("noise-mask").classList.remove("hidden");
+        hidePictures();
+        show("noise-mask");
     }, 2650);
 
     setTimeout(() => {
-        document.getElementById("noise-mask").classList.add("hidden");
-        document.getElementById("fixation-cross").classList.add("hidden");
+        hide("noise-mask");
+        hide("fixation-cross");
     }, 3000);
 
     setTimeout(() => {
-        document.getElementById("slider").classList.remove("hidden");
+        document.getElementById("slider").value = 50;
+        show("slider");
     }, 3300);
 
-    updateStimuli();
+    swapPictures();
     progress = progress + 1;
 });
 
 document.getElementById("slider").addEventListener("change", function(event) {
-    document.getElementById("continue-button").classList.remove("hidden");
+    show("continue-button");
 });
 
+
+
 document.getElementById("download-button").addEventListener("click", function(event) {
-    /*const rows = [
-        ["name1", "city1", "some other info"],
-        ["name2", "city2", "more info"]
-    ];
-    */
    var rows = finalOrder
     
     let csvContent = "data:text/csv;charset=utf-8," 
