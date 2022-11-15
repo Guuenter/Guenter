@@ -58,33 +58,34 @@ li {
 }
 
 #stimulus-center {
-    width: 100px;
+    width: 120px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -50px;
+    margin-left: -65px;
     margin-top: -150px;
-    margin-top: -100px;
+
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
 }
 
 #stimulus-left {
-    width: 100px;
+    width: 120px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -150px;
+    margin-left: -185px;
     margin-top: -150px;
-    margin-top: -100px;
 }
 
 #stimulus-right {
-    width: 100px;
+    width: 120px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: 50px;
+    margin-left: 65px;
     margin-top: -150px;
-    margin-top: -100px;
 }
 
 .hidden {

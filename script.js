@@ -37,7 +37,7 @@ function initialiseExperiment() {
     shuffle(leftOrder);
     shuffle(rightOrder);
 
-    var shuffleDegree = (Math.floor(Math.random() * 2) + 1);
+    var shuffleDegree = (Math.floor(Math.random() * 3) + 1);
     for(var i = 1; i<32; i++) {
         finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 0])
         finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], shuffleDegree])
@@ -65,22 +65,21 @@ swapPictures();
 
 
 document.getElementById("continue-button").addEventListener("click", function(event) {
+    if(progress>0) {
+        finalOrder[progress - 1].push("" + document.getElementById("slider").value);
+    }
     if(progress>61) {
         hide("continue-button");
         hide("slider");
         show("download-button");
         return;
     }
-    if(progress>0) {
-        finalOrder[progress - 1].push("" + document.getElementById("slider").value);
-    }
-    
 
     hide("continue-button");
     hide("instructions");
     hide("slider");
     
-    show("noise-mask");
+    //show("noise-mask");
 
     setTimeout(() => {
         hide("noise-mask");
@@ -91,22 +90,21 @@ document.getElementById("continue-button").addEventListener("click", function(ev
     setTimeout(() => {
         hide("fixation-cross");
         showPictures();
-    }, 2300);
+    }, 1300);
 
     setTimeout(() => {
         hidePictures();
         show("noise-mask");
-    }, 2650);
+    }, 2300);
 
     setTimeout(() => {
         hide("noise-mask");
-        hide("fixation-cross");
-    }, 3000);
+    }, 2600);
 
     setTimeout(() => {
         document.getElementById("slider").value = 50;
         show("slider");
-    }, 3300);
+    }, 3000);
 
     swapPictures();
     progress = progress + 1;
