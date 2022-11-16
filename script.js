@@ -72,6 +72,7 @@ document.getElementById("continue-button").addEventListener("click", function(ev
         hide("continue-button");
         hide("slider");
         show("download-button");
+        show("submission-instructions")
         return;
     }
 

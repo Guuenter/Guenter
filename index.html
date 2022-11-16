@@ -16,19 +16,27 @@
                 This is a "fixation cross":
                 <br><img src="Images/000_fixation-cross.png"/>
                 <br>When this symbol appears, keep your eyes fixed on it. 
-                <br>Do not look away from the center of the screen.</li>
-            <li>You will briefly see pictures of people</li>
+                </li>
+            <li>Afterwards, you will briefly see pictures of people.
+                <!--<br>Do not look away from the center of the screen while the pictures are on screen.
+                <br>The person to be rated will be surrounded by a red border.
+                <br>Only look at the person at the center of the screen.-->
+            </li>
             <!--<li>Do not move your eyes, always keep looking at the "fixation cross" in the middle of the screen </li>-->
             <li>
-                After each picture, you will be asked to intuitively rate the attractiveness of the person at the center of the screen using a sliding scale like this: 
+                After each picture, you will be asked to intuitively rate the attractiveness of the person that is surrounded by a red border using a sliding scale like this: 
                 <br><br><input type="range" min=0 max=100 value=50/>
                 <br>
             </li>
-            <li>Move the slider <b>right</b> if you think the person was <b>attractive</b></li>
-            <li>Move the slider <b>left</b> if you think the person was <b>not</b> attractive</li>
-            <li>After making a rating, click "continue" to see the next picture</li>
+            <li>Move the slider <b>right</b> if you think the person was <b>attractive</b>.</li>
+            <li>Move the slider <b>left</b> if you think the person was <b>not</b> attractive.</li>
+            <li>After making a rating, click "continue" to see the next picture.</li>
             <!--<li>You will only see each picture for a fraction of a second, so try to stay as focussed as possible</li>-->
-            <li>The experiment can be completed in as little as 6 minutes, but this depends on your speed. You will be shown 62 pictures. </li>
+            <li>The experiment can be completed in as little as 6 minutes<!--, but this depends on your speed-->. You will be shown 62 pictures. </li>
+            <li>Your Data will be collected only for research purposes. Your data will not be shared publicly. Please mind that we Viktor Stebner, Vivian Moosmann and Thomas Weinmann will be the only persons processing your data. 
+                <br>The Experiment requires you to manually submit your results via email to <b>ws22.cheerleader.effect@gmail.com</b> 
+                <br>By clicking continue, you consent to participating in our experiment as specified.</li>
+            <li>If you have any questions, please contact us at <b>ws22.cheerleader.effect@gmail.com</b></li>
         </ul>
         
         
@@ -37,6 +45,14 @@
     <input type="range" id="slider" min=0 max=100 value=50 class="hidden"/>
     <input type="button" id="continue-button" value="Continue"/>
     <input type="button" id="download-button" value="Download Results" class="hidden"/>
+    <div id="submission-instructions" class="hidden">
+        <h1>One last thing</h1>
+        This is the end of the experiment, 
+        <br>please download your results using the button "Download Results" and send them to
+        <br><b>ws22.cheerleader.effect@gmail.com</b>
+        <br>with the your name as the subject line.
+        <br><br>Thank You!
+    </div>
     <img src="Images/027_scramble-0.jpg" id="stimulus-center" class="stimulus hidden"/>
     <img src="Images/002_scramble-1.jpg" id="stimulus-left" class="stimulus hidden"/>
     <img src="Images/014_scramble-1.jpg" id="stimulus-right" class="stimulus hidden"/>

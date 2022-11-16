@@ -7,7 +7,7 @@ input[type="range"] {
     width: 100%;
 }
 */
-#instructions {
+#instructions, #submission-instructions {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
