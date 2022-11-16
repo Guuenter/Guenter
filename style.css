@@ -58,12 +58,12 @@ li {
 }
 
 #stimulus-center {
-    width: 120px;
+    width: 140px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -65px;
-    margin-top: -150px;
+    margin-left: -75px;
+    margin-top: -185px;
 
     border-color: red;
     border-width: 5px;
@@ -71,21 +71,21 @@ li {
 }
 
 #stimulus-left {
-    width: 120px;
+    width: 140px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -185px;
-    margin-top: -150px;
+    margin-left: -215px;
+    margin-top: -180px;
 }
 
 #stimulus-right {
-    width: 120px;
+    width: 140px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: 65px;
-    margin-top: -150px;
+    margin-left: 75px;
+    margin-top: -180px;
 }
 
 .hidden {

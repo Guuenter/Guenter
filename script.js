@@ -37,10 +37,13 @@ function initialiseExperiment() {
     shuffle(leftOrder);
     shuffle(rightOrder);
 
-    var shuffleDegree = (Math.floor(Math.random() * 3) + 1);
+    //var shuffleDegree = (Math.floor(Math.random() * 3) + 1);
     for(var i = 1; i<32; i++) {
-        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 0])
-        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], shuffleDegree])
+        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 0]);
+        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 1]);
+        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 2]);
+        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 3]);
+        //finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], shuffleDegree]);
     }
 
     shuffle(finalOrder);
@@ -68,7 +71,7 @@ document.getElementById("continue-button").addEventListener("click", function(ev
     if(progress>0) {
         finalOrder[progress - 1].push("" + document.getElementById("slider").value);
     }
-    if(progress>61) {
+    if(progress>123) {
         hide("continue-button");
         hide("slider");
         show("download-button");
@@ -96,16 +99,16 @@ document.getElementById("continue-button").addEventListener("click", function(ev
     setTimeout(() => {
         hidePictures();
         show("noise-mask");
-    }, 2300);
+    }, 2000);
 
     setTimeout(() => {
         hide("noise-mask");
-    }, 2600);
+    }, 2300);
 
     setTimeout(() => {
         document.getElementById("slider").value = 50;
         show("slider");
-    }, 3000);
+    }, 2700);
 
     swapPictures();
     progress = progress + 1;
