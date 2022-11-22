@@ -58,6 +58,7 @@ function swapPictures() {
 var stimuli = document.getElementsByClassName("stimulus");
 var finalOrder = [];
 var progress = 0;
+var break_taken = false;
 initialiseExperiment();
 swapPictures();
 
@@ -68,7 +69,7 @@ swapPictures();
 
 
 document.getElementById("continue-button").addEventListener("click", function(event) {
-    if(progress>0) {
+    if((progress>0) && break_taken==false) {
         finalOrder[progress - 1].push("" + document.getElementById("slider").value);
     }
     if(progress>123) {
@@ -83,32 +84,50 @@ document.getElementById("continue-button").addEventListener("click", function(ev
     hide("instructions");
     hide("slider");
     
+    if((progress==31) && (break_taken==false)) {
+        document.getElementById("break-id").innerText = "first";
+        show("break-button");
+        show("break-instructions");
+        return;
+    }
+    if((progress==62) && (break_taken==false)) {
+        document.getElementById("break-id").innerText = "second";
+        show("break-button");
+        show("break-instructions");
+        return;
+    }
+    if((progress==93) && (break_taken==false)) {
+        document.getElementById("break-id").innerText = "third";
+        show("break-button");
+        show("break-instructions");
+        return;
+    }
+    if(break_taken==true) {
+        break_taken=false;
+    }
     //show("noise-mask");
 
     setTimeout(() => {
         hide("noise-mask");
         hide("slider");
         show("fixation-cross");
-    }, 300);
+    }, 0);
 
     setTimeout(() => {
         hide("fixation-cross");
         showPictures();
-    }, 1300);
+    }, 1000);
 
     setTimeout(() => {
         hidePictures();
         show("noise-mask");
-    }, 2000);
+    }, 3000);
 
     setTimeout(() => {
         hide("noise-mask");
-    }, 2300);
-
-    setTimeout(() => {
-        document.getElementById("slider").value = 50;
+        document.getElementById("slider").value = 0;
         show("slider");
-    }, 2700);
+    }, 3300);
 
     swapPictures();
     progress = progress + 1;
@@ -118,6 +137,12 @@ document.getElementById("slider").addEventListener("change", function(event) {
     show("continue-button");
 });
 
+document.getElementById("break-button").addEventListener("click", function(event) {
+    hide("break-instructions");
+    hide("break-button");
+    break_taken = true;
+    show("continue-button");
+ });
 
 
 document.getElementById("download-button").addEventListener("click", function(event) {
