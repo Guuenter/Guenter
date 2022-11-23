@@ -75,6 +75,8 @@ document.getElementById("continue-button").addEventListener("click", function(ev
     if(progress>123) {
         hide("continue-button");
         hide("slider");
+        hide("slider-label-left");
+        hide("slider-label-right");
         show("download-button");
         show("submission-instructions")
         return;
@@ -83,6 +85,8 @@ document.getElementById("continue-button").addEventListener("click", function(ev
     hide("continue-button");
     hide("instructions");
     hide("slider");
+    hide("slider-label-left");
+    hide("slider-label-right");
     
     if((progress==31) && (break_taken==false)) {
         document.getElementById("break-id").innerText = "first";
@@ -110,6 +114,8 @@ document.getElementById("continue-button").addEventListener("click", function(ev
     setTimeout(() => {
         hide("noise-mask");
         hide("slider");
+        hide("slider-label-left");
+        hide("slider-label-right");
         show("fixation-cross");
     }, 0);
 
@@ -127,6 +133,8 @@ document.getElementById("continue-button").addEventListener("click", function(ev
         hide("noise-mask");
         document.getElementById("slider").value = 0;
         show("slider");
+        show("slider-label-left");
+        show("slider-label-right");
     }, 3300);
 
     swapPictures();
