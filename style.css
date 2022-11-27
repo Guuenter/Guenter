@@ -29,6 +29,16 @@ li {
     width: 100vw;
 }
 
+.conceal-pictures{
+    display: block; 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+
 #slider {
     position: absolute;
     width: 60vw;
@@ -80,7 +90,7 @@ li {
     padding: 10px;
 }
 
-#stimulus-center {
+.hfuset-center {
     width: 140px;
     position: absolute;
     left: 50%;
@@ -93,7 +103,7 @@ li {
     border-style: solid;
 }
 
-#stimulus-left {
+.hfuset-left {
     width: 140px;
     position: absolute;
     left: 50%;
@@ -102,13 +112,44 @@ li {
     margin-top: -180px;
 }
 
-#stimulus-right {
+.hfuset-right {
     width: 140px;
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: 75px;
     margin-top: -180px;
+}
+
+.londonset-left {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    margin-top: -150px;
+    left: 50%;
+    margin-left: -455px; 
+}
+
+.londonset-center {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    margin-top: -155px;
+    left: 50%;
+    margin-left: -155px;
+
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.londonset-right {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    margin-top: -150px;
+    left: 50%;
+    margin-left: 155px;
 }
 
 .hidden {

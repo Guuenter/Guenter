@@ -14,114 +14,113 @@ function show(id) {
     document.getElementById(id).classList.remove("hidden");
 }
 
+function hideAll() {
+    for (var i = 0; i < state.all.length; i++) {
+        state.all.item(i).classList.add("hidden");
+    }
+}
+
 function hidePictures() {
-    for (var i = 0; i < stimuli.length; i++) {
-        stimuli.item(i).classList.add("hidden");
+    for (var i = 0; i < state.stimuli.length; i++) {
+        state.stimuli.item(i).classList.add("hidden");
     }
 }
 
 function showPictures() {
-    for (var i = 0; i < stimuli.length; i++) {
-        stimuli.item(i).classList.remove("hidden");
+    for (var i = 0; i < state.stimuli.length; i++) {
+        state.stimuli.item(i).classList.remove("hidden");
     }
 }
 
-function initialiseExperiment() {
-    var leftOrder = [];
-    var rightOrder = [];
-    for(var i = 1; i<32; i++) {
-        leftOrder.push(("000" + i).slice (-3));
-        rightOrder.push(("000" + i).slice (-3));
-    }
-
-    shuffle(leftOrder);
-    shuffle(rightOrder);
-
-    //var shuffleDegree = (Math.floor(Math.random() * 3) + 1);
-    for(var i = 1; i<32; i++) {
-        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 0]);
-        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 1]);
-        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 2]);
-        finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], 3]);
-        //finalOrder.push([leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1], shuffleDegree]);
-    }
-
-    shuffle(finalOrder);
+var state = {
+    progress: 0,
+    scenes: [], 
+    all: document.getElementsByClassName("all"), 
+    stimuli: document.getElementsByClassName("stimulus")
 }
 
-function swapPictures() {
-    document.getElementById("stimulus-left").src = "Images/" + finalOrder[progress][0] + "_scramble-" + finalOrder[progress][3] + ".jpg";
-    document.getElementById("stimulus-center").src = "Images/" + finalOrder[progress][1] + "_scramble-" + "0" + ".jpg";
-    document.getElementById("stimulus-right").src = "Images/" + finalOrder[progress][2] + "_scramble-" + finalOrder[progress][3] + ".jpg";
+function renderState(i) {
+    hideAll();
+    switch(state.scenes[i][0]) {
+        case "briefing":
+            show("briefing-text");
+            show("continue-button");
+            break;
+        case "break":
+            show("break-text");
+            setTimeout(() => {
+                show("continue-button");
+            }, 5000);
+            break;
+        case "debriefing":
+            show("debriefing-text");
+            show("download-button");
+            break;
+        case "hfuset":
+            hfusetTrial();
+            break;
+        case "londonset":
+            londonsetTrial();
+            break;
+    }
 }
 
-var stimuli = document.getElementsByClassName("stimulus");
-var finalOrder = [];
-var progress = 0;
-var break_taken = false;
-initialiseExperiment();
-swapPictures();
-
-
-
-
-
-
-
-document.getElementById("continue-button").addEventListener("click", function(event) {
-    if((progress>0) && break_taken==false) {
-        finalOrder[progress - 1].push("" + document.getElementById("slider").value);
+function hfusetTrial() {
+    document.getElementById("stimulus-left").classList.remove("londonset-left");
+    document.getElementById("stimulus-center").classList.remove("londonset-center");
+    document.getElementById("stimulus-right").classList.remove("londonset-right");
+    document.getElementById("stimulus-left").classList.add("hfuset-left");
+    document.getElementById("stimulus-center").classList.add("hfuset-center");
+    document.getElementById("stimulus-right").classList.add("hfuset-right");
+    switch(state.scenes[state.progress][1]) {
+        case "alone":
+            document.getElementById("stimulus-left").src = "Images/001_scramble-3.jpg";
+            document.getElementById("stimulus-center").src = "Images/" + state.scenes[state.progress][3] + "_scramble-0.jpg";
+            document.getElementById("stimulus-right").src = "Images/001_scramble-3.jpg";
+            break;
+        case "group":
+            document.getElementById("stimulus-left").src = "Images/" + state.scenes[state.progress][2] + "_scramble-0.jpg";;
+            document.getElementById("stimulus-center").src = "Images/" + state.scenes[state.progress][3] + "_scramble-0.jpg";
+            document.getElementById("stimulus-right").src = "Images/" + state.scenes[state.progress][4] + "_scramble-0.jpg";
+            break;
     }
-    if(progress>123) {
-        hide("continue-button");
-        hide("slider");
-        hide("slider-label-left");
-        hide("slider-label-right");
-        show("download-button");
-        show("submission-instructions")
-        return;
-    }
+    runTrial();
+}
 
-    hide("continue-button");
-    hide("instructions");
-    hide("slider");
-    hide("slider-label-left");
-    hide("slider-label-right");
-    
-    if((progress==31) && (break_taken==false)) {
-        document.getElementById("break-id").innerText = "first";
-        show("break-button");
-        show("break-instructions");
-        return;
+function londonsetTrial() {
+    document.getElementById("stimulus-left").classList.remove("hfuset-left");
+    document.getElementById("stimulus-center").classList.remove("hfuset-center");
+    document.getElementById("stimulus-right").classList.remove("hfuset-right");
+    document.getElementById("stimulus-left").classList.add("londonset-left");
+    document.getElementById("stimulus-center").classList.add("londonset-center");
+    document.getElementById("stimulus-right").classList.add("londonset-right");
+    switch(state.scenes[state.progress][1]) {
+        case "alone":
+            document.getElementById("stimulus-left").src = "Images/F-000.jpg";
+            document.getElementById("stimulus-center").src = "Images/F-" + state.scenes[state.progress][3] + ".jpg";
+            document.getElementById("stimulus-right").src = "Images/F-000.jpg";
+            break;
+        case "group":
+            document.getElementById("stimulus-left").src = "Images/F-" + state.scenes[state.progress][2] + ".jpg";
+            document.getElementById("stimulus-center").src = "Images/F-" + state.scenes[state.progress][3] + ".jpg";
+            document.getElementById("stimulus-right").src = "Images/F-" + state.scenes[state.progress][4] + ".jpg";
+            break;
     }
-    if((progress==62) && (break_taken==false)) {
-        document.getElementById("break-id").innerText = "second";
-        show("break-button");
-        show("break-instructions");
-        return;
-    }
-    if((progress==93) && (break_taken==false)) {
-        document.getElementById("break-id").innerText = "third";
-        show("break-button");
-        show("break-instructions");
-        return;
-    }
-    if(break_taken==true) {
-        break_taken=false;
-    }
-    //show("noise-mask");
+    runTrial();
+}
 
+function runTrial() {
     setTimeout(() => {
-        hide("noise-mask");
-        hide("slider");
-        hide("slider-label-left");
-        hide("slider-label-right");
+        show("conceal-pictures");
         show("fixation-cross");
+        //pictures visible but concealed (to allow loading in the background)
+        showPictures();
     }, 0);
 
     setTimeout(() => {
+        //reveal pictures
+        hide("conceal-pictures");
         hide("fixation-cross");
-        showPictures();
     }, 1000);
 
     setTimeout(() => {
@@ -136,34 +135,89 @@ document.getElementById("continue-button").addEventListener("click", function(ev
         show("slider-label-left");
         show("slider-label-right");
     }, 3300);
+}
 
-    swapPictures();
-    progress = progress + 1;
-});
+function initialiseExperiment() {
+    //Stimulus Set 1 (hfuset)
+    var leftOrder = [];
+    var rightOrder = [];
+    for(var i = 1; i<32; i++) {
+        leftOrder.push(("000" + i).slice (-3));
+        rightOrder.push(("000" + i).slice (-3));
+    }
+
+    shuffle(leftOrder);
+    shuffle(rightOrder);
+
+    for(var i = 1; i<32; i++) {
+        state.scenes.push(["hfuset", "group", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+        state.scenes.push(["hfuset", "alone", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+    }
+    //
+    //Stimulus Set 2 (londonset)
+    var leftOrder = [];
+    var rightOrder = [];
+    for(var i = 1; i<50; i++) {
+        leftOrder.push(("000" + i).slice (-3));
+        rightOrder.push(("000" + i).slice (-3));
+    }
+
+    shuffle(leftOrder);
+    shuffle(rightOrder);
+
+    for(var i = 1; i<50; i++) {
+        state.scenes.push(["londonset", "group", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+        state.scenes.push(["londonset", "alone", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+    }
+    //
+    shuffle(state.scenes);
+    state.scenes.splice(0,0,["briefing"]);
+    state.scenes.splice(33,0,["break"]);
+    state.scenes.splice(66,0,["break"]);
+    state.scenes.splice(99,0,["break"]);
+    state.scenes.splice(132,0,["break"]);
+    state.scenes.push(["debriefing"]);
+    renderState(state.progress);
+}
+
+initialiseExperiment();
 
 document.getElementById("slider").addEventListener("change", function(event) {
     show("continue-button");
 });
 
-document.getElementById("break-button").addEventListener("click", function(event) {
-    hide("break-instructions");
-    hide("break-button");
-    break_taken = true;
-    show("continue-button");
- });
-
+document.getElementById("continue-button").addEventListener("click", function(event) {
+    hide("continue-button");
+    switch(state.scenes[state.progress][0]) {
+        case "briefing":
+            break;
+        case "break":
+            break;
+        case "debriefing":
+            break;
+        case "hfuset":
+            state.scenes[state.progress].push("" + document.getElementById("slider").value);
+            break;
+        case "londonset":
+            state.scenes[state.progress].push("" + document.getElementById("slider").value);
+            break;
+    }
+    state.scenes[state.progress].push("" + Date.now());
+    state.progress = state.progress + 1;
+    renderState(state.progress);
+});
 
 document.getElementById("download-button").addEventListener("click", function(event) {
-   var rows = finalOrder
-    
-    let csvContent = "data:text/csv;charset=utf-8," 
-        + rows.map(e => e.join(",")).join("\n");
-
-        var encodedUri = encodeURI(csvContent);
-        var link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "experiment-log_"+Math.floor(Math.random() * 1000000) + 1+".csv");
-        document.body.appendChild(link); // Required for FF
-        
-        link.click();
-});
+    var rows = state.scenes
+     
+     let csvContent = "data:text/csv;charset=utf-8," 
+         + rows.map(e => e.join(",")).join("\n");
+ 
+         var encodedUri = encodeURI(csvContent);
+         var link = document.createElement("a");
+         link.setAttribute("href", encodedUri);
+         link.setAttribute("download", "experiment-log_"+Math.floor(Math.random() * 1000000) + 1+".csv");
+         document.body.appendChild(link); // Required for FF
+         
+         link.click();
+ });
