@@ -217,7 +217,7 @@ document.getElementById("continue-button").addEventListener("click", function(ev
             state.scenes[state.progress].push("" + document.getElementById("slider").value);
             break;
     }
-    state.scenes[state.progress].push("" + Date.now());
+    state.scenes[state.progress].push("" + Math.round(Date.now()/1000));
     state.progress = state.progress + 1;
     renderState(state.progress);
 });
