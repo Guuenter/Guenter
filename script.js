@@ -6,6 +6,15 @@ function shuffle(a) {
     return a;
 }
 
+function groupTrialTypes() {
+    //sort by trial type, random ordering within trial type is preserved
+    state.scenes.sort((a,b) => a[0].toUpperCase().localeCompare(b[0].toUpperCase()));
+    //in 50% of cases, reverse the entire ordering, so that each trial type is equally likely to come first
+    if(Math.random() < 0.5) {
+        state.scenes.reverse();
+    }
+}
+
 function hide(id) {
     document.getElementById(id).classList.add("hidden");
 }
@@ -171,6 +180,12 @@ function initialiseExperiment() {
     }
     //
     shuffle(state.scenes);
+    
+    //group by trial type while preserving random ordering within trial types
+    groupTrialTypes();
+    //
+
+
     state.scenes.splice(0,0,["briefing"]);
     state.scenes.splice(33,0,["break"]);
     state.scenes.splice(66,0,["break"]);
