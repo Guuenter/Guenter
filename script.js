@@ -139,7 +139,7 @@ function runTrial() {
 
     setTimeout(() => {
         hide("noise-mask");
-        document.getElementById("slider").value = 0;
+        document.getElementById("slider").value = 50;
         show("slider");
         show("slider-label-left");
         show("slider-label-right");
