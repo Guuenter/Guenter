@@ -114,6 +114,16 @@ function londonsetTrial() {
             document.getElementById("stimulus-center").src = "Images/F-" + state.scenes[state.progress][3] + ".jpg";
             document.getElementById("stimulus-right").src = "Images/F-" + state.scenes[state.progress][4] + ".jpg";
             break;
+        case "scramble-1":
+            document.getElementById("stimulus-left").src = "Images/F-" + state.scenes[state.progress][2] + "-sc1.jpg";
+            document.getElementById("stimulus-center").src = "Images/F-" + state.scenes[state.progress][3] + ".jpg";
+            document.getElementById("stimulus-right").src = "Images/F-" + state.scenes[state.progress][4] + "-sc1.jpg";
+            break;
+        case "scramble-2":
+            document.getElementById("stimulus-left").src = "Images/F-" + state.scenes[state.progress][2] + "-sc2.jpg";
+            document.getElementById("stimulus-center").src = "Images/F-" + state.scenes[state.progress][3] + ".jpg";
+            document.getElementById("stimulus-right").src = "Images/F-" + state.scenes[state.progress][4] + "-sc2.jpg";
+            break;
     }
     runTrial();
 }
@@ -148,20 +158,20 @@ function runTrial() {
 
 function initialiseExperiment() {
     //Stimulus Set 1 (hfuset)
-    var leftOrder = [];
-    var rightOrder = [];
-    for(var i = 1; i<32; i++) {
-        leftOrder.push(("000" + i).slice (-3));
-        rightOrder.push(("000" + i).slice (-3));
-    }
+    // var leftOrder = [];
+    // var rightOrder = [];
+    // for(var i = 1; i<32; i++) {
+    //     leftOrder.push(("000" + i).slice (-3));
+    //     rightOrder.push(("000" + i).slice (-3));
+    // }
 
-    shuffle(leftOrder);
-    shuffle(rightOrder);
+    // shuffle(leftOrder);
+    // shuffle(rightOrder);
 
-    for(var i = 1; i<32; i++) {
-        state.scenes.push(["hfuset", "group", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
-        state.scenes.push(["hfuset", "alone", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
-    }
+    // for(var i = 1; i<32; i++) {
+    //     state.scenes.push(["hfuset", "group", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+    //     state.scenes.push(["hfuset", "alone", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+    // }
     //
     //Stimulus Set 2 (londonset)
     var leftOrder = [];
@@ -177,20 +187,27 @@ function initialiseExperiment() {
     for(var i = 1; i<50; i++) {
         state.scenes.push(["londonset", "group", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
         state.scenes.push(["londonset", "alone", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+        //added for experiment 3
+        state.scenes.push(["londonset", "scramble-1", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+        state.scenes.push(["londonset", "scramble-2", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
     }
     //
     shuffle(state.scenes);
     
     //group by trial type while preserving random ordering within trial types
-    groupTrialTypes();
+    //groupTrialTypes();
     //
 
 
     state.scenes.splice(0,0,["briefing"]);
-    state.scenes.splice(33,0,["break"]);
-    state.scenes.splice(66,0,["break"]);
-    state.scenes.splice(99,0,["break"]);
-    state.scenes.splice(132,0,["break"]);
+    state.scenes.splice(41,0,["break"]);
+    state.scenes.splice(81,0,["break"]);
+    state.scenes.splice(121,0,["break"]);
+    state.scenes.splice(161,0,["break"]);
+    // state.scenes.splice(33,0,["break"]);
+    // state.scenes.splice(66,0,["break"]);
+    // state.scenes.splice(99,0,["break"]);
+    // state.scenes.splice(132,0,["break"]);
     state.scenes.push(["debriefing"]);
     renderState(state.progress);
 }
@@ -205,10 +222,19 @@ document.getElementById("continue-button").addEventListener("click", function(ev
     hide("continue-button");
     switch(state.scenes[state.progress][0]) {
         case "briefing":
+            for(var i = 0; i<5; i++) {
+                state.scenes[state.progress].push("");
+            }
             break;
         case "break":
+            for(var i = 0; i<5; i++) {
+                state.scenes[state.progress].push("");
+            }
             break;
         case "debriefing":
+            for(var i = 0; i<5; i++) {
+                state.scenes[state.progress].push("");
+            }
             break;
         case "hfuset":
             state.scenes[state.progress].push("" + document.getElementById("slider").value);
