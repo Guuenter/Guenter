@@ -181,8 +181,31 @@ function initialiseExperiment() {
         rightOrder.push(("000" + i).slice (-3));
     }
 
-    shuffle(leftOrder);
-    shuffle(rightOrder);
+    //moved into subsequent loop
+    // // shuffle(leftOrder);
+    // // shuffle(rightOrder);
+    //
+
+    //make sure that no picture will be displayed next to itself (experiment 3)
+    var strictlyDifferentPictures = false;
+    while (!strictlyDifferentPictures) {
+        shuffle(leftOrder);
+        shuffle(rightOrder);
+        strictlyDifferentPictures = true;
+        for(var i = 0; i < 49; i++) {
+            if(leftOrder[i] == i) {
+                strictlyDifferentPictures = false;
+            }
+            if(rightOrder[i] == i) {
+                strictlyDifferentPictures = false;
+            }
+            if(leftOrder[i] == rightOrder[i]) {
+                strictlyDifferentPictures = false;
+            }
+        }
+        console.log("reshuffling...");
+    }
+    //
 
     for(var i = 1; i<50; i++) {
         state.scenes.push(["londonset", "group", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
