@@ -222,10 +222,9 @@ function initialiseExperiment() {
 
 
     state.scenes.splice(0,0,["briefing"]);
-    state.scenes.splice(41,0,["break"]);
-    state.scenes.splice(81,0,["break"]);
-    state.scenes.splice(121,0,["break"]);
-    state.scenes.splice(161,0,["break"]);
+    state.scenes.splice(33,0,["break"]);
+    state.scenes.splice(66,0,["break"]);
+
     // state.scenes.splice(33,0,["break"]);
     // state.scenes.splice(66,0,["break"]);
     // state.scenes.splice(99,0,["break"]);
