@@ -211,8 +211,7 @@ function initialiseExperiment() {
         state.scenes.push(["londonset", "group", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
         state.scenes.push(["londonset", "alone", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
         //added for experiment 3
-        state.scenes.push(["londonset", "scramble-1", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
-        state.scenes.push(["londonset", "scramble-2", leftOrder[i-1], ("000" + i).slice (-3), rightOrder[i-1]]);
+       
     }
     //
     shuffle(state.scenes);
